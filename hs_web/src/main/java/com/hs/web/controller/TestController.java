@@ -6,13 +6,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @user :flyxk
  * date :2017/10/24
  */
-@RestController
+@Controller
 public class TestController {
     private final Logger logger = LoggerFactory.getLogger(TestController.class);
 
@@ -20,8 +21,8 @@ public class TestController {
     private TestConfig testConfig;
 
     @RequestMapping("/test")
-    public String test() {
-        System.out.println("name=" + testConfig.getName());
-        return "test in ....";
+    public String test(HttpServletRequest request) {
+        request.setAttribute("name", "zk");
+        return "/index";
     }
 }

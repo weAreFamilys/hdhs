@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: dev
+  freemarker:
+    enabled: true
+    charset: utf-8
+    suffix: .ftl
 server:
   port: 8080
   context-path: /
