@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8080
+  context-path: /
+  tomcat:
+    uri-encoding: utf-8
+  session:
+    # 以秒计
+    timeout: 60
+
