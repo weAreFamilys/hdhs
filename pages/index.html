@@ -9,6 +9,10 @@
     <title>桦树林子学校</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/index.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>  
+    <script type="text/javascript" src="js/libs/bootstrap.min.js"></script> 
+    <script src="js/libs/ie10-viewport-bug-workaround.js"></script> 
 </head>
 <body>
 <div class="navbar-wrapper">
@@ -30,49 +34,41 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">学校简介</a></li>
+                                <li><a href="#">办学思想</a></li>
+                                <li><a href="#">领导班子</a></li>
+                                <li><a href="#">校园风光</a></li>
+                                <li><a href="#">学校荣誉</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学资源<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学科研<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">课程园地</a></li>
+                                <li><a href="#">教科新闻</a></li>
+                                <li><a href="#">教师风采</a></li>
+                                <li><a href="#">教学监督</a></li>
+                                
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校机构<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园发布<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">校园动态</a></li>
+                                <li><a href="#">公告公示</a></li>
+                                <li><a href="#">工作安排</a></li>
+                                <li><a href="#">招生招聘</a></li>
+                                <li><a href="#">应聘报名</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园文化<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">文件精神</a></li>
+                                <li><a href="#">传统文化</a></li>
+                                <li><a href="#">志愿服务</a></li>
+                                <li><a href="#">校园安全</a></li>
+                                <li><a href="#">创先争优</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -100,7 +96,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="first-slide" src="http://www.fudan.edu.cn/files/slider/1920/636.jpg" alt="First slide">
+            <img class="first-slide" src="img/nerium_red.jpg" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Example headline.</h1>
@@ -110,7 +106,7 @@
             </div>
         </div>
         <div class="item">
-            <img class="second-slide" src="http://www.fudan.edu.cn/files/slider/1920/635.jpg" alt="Second slide">
+            <img class="second-slide" src="img/nerium_white.jpg" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Another example headline.</h1>
@@ -120,7 +116,7 @@
             </div>
         </div>
         <div class="item">
-            <img class="third-slide" src="http://www.fudan.edu.cn/files/slider/1920/632.jpg" alt="Third slide">
+            <img class="third-slide" src="img/nerium_yellow.jpg" alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>One more for good measure.</h1>
@@ -145,90 +141,330 @@
    ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="container news">
-    <div class="row">
-        <div class="col-lg-6">
+ <!-- Start Body Content -->
+ <div id="div3" class="main" role="main">
+    <div class="panel1 standard-outter-size">
+      <div class="container standard-inner-padding">
+        <div class="row">
+        
+        
+          <div class="col-xs-4 topnews">
+            <div id="rss-news" class="panel panel-default">
 
-            <h3><span class="glyphicon glyphicon-list-alt"></span>学校新闻</h3>
-            <hr class="news-divider" />
-            <p>
-                <a href="#">这里是新闻内容这里是新闻内容这里是新闻内容...</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+              <div class="panel-heading">
+              <!--<i class="fa fa-link"></i>-->
+              <img src="img/nerium_red.jpg" style="width: 22px;height: 22px;position: relative;top: -3px;left: -4px;" />
+              <span class="mytitle">学校要闻 
+              <small>Top News</small></span>
+              <div class="pull-right" style="">
 
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+              </div>
+              <div class="clearfix"></div></div>
+              <div class="panel-body standard-vertical-bordered mypanel-padding" style="height: 417px;min-width:330px;">
 
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-            <hr class="news-divider" />
-            <a href="#">更多通知公告</a>
+                                  <div class="row" style="margin-top: 15px;">
 
+                                      <ul id="small_slides1" class="small_slides">
+                                          <!-- content of news pic -->
+                    <li><img src="" width="150"
+                      height="140" alt="Pic Mgmt" />
+                      <div class="slides-text">
+                        <div class="slides1-title"><a href="" class="slides-a"></a></div>
+                        <div class="slides1-content"></div>
+                        <div class="slides1-time"></div>
+                      </div>
+                      <div class="clear"></div></li>
+                    <li><img src="" width="150"
+                      height="140" alt="Pic Lcd" />
+                      <div class="slides-text">
+                        <div class="slides1-title"><a href="" class="slides-a"></a></div>
+                        <div class="slides1-content"></div>
+                        <div class="slides1-time"></div>
+                      </div>
+                      <div class="clear"></div></li>
+                    <li><img src="" width="150"
+                      height="140" alt="Pic Montreal" />
+                      <div class="slides-text">
+                        <div class="slides1-title"><a href="" class="slides-a">开</a></div>
+                        <div class="slides1-content"></div>
+                        <div class="slides1-time"></div>
+                      </div>
+                      <div class="clear"></div></li>
+                                      </ul>
+              </div>
+
+                <div class="row" id="topNews">
+                             <!-- content of news -->
+                 </div>
+              </div>
+              <div class="row" style="padding-top: 8px;margin-left:0px;">
+                  <span>
+                    <a class="hover-blue" style="font-weight: bold;"
+                       href="#">继续阅读
+                      <img src="images/Fudan_home_more_37.png" style="position: relative;top: -1px;" />
+                    </a>
+                  </span>
+                </div>
+            </div>
+          </div>
+          
+          
+         <div class="col-xs-4">
+            <div id="rss-news" class="panel panel-default">
+
+              <div class="panel-heading">
+              <!--<i class="fa fa-link"></i>-->
+              <img src="img/nerium_yellow.jpg" style="width: 22px;height: 22px;position: relative;top: -3px;left: -4px;" />
+              <span class="mytitle">综合新闻 
+              <small>Fudan News</small></span>
+              <div class="pull-right" style="">
+
+              </div>
+              <div class="clearfix"></div></div>
+              <div class="panel-body standard-vertical-bordered mypanel-padding" style="height: 417px;min-width:330px;">
+
+                <div class="row" style="margin-top:15px;" id="fudanNews">
+                        <!-- content of fudan news -->
+                </div>
+                
+               
+              </div>
+               <div class="row" style="padding-top: 8px;margin-left:0px;">
+                  <span>
+                    <a class="hover-blue" style="font-weight: bold;"
+                       href="#">继续阅读
+                      <img src="images/Fudan_home_more_37.png" style="position: relative;top: -1px;" />
+                    </a>
+                  </span>
+                </div>
+            </div>
+          </div>
+          
+          
+          
+          <div class="col-xs-4">
+            <div id="rss-events" class="panel panel-default">
+              <div class="panel-heading">
+              <!--<i class="fa fa-link"></i>-->
+              <img src="img/nerium_white.jpg" style="width: 22px;height: 22px;position: relative;top: -3px;left: -4px;" />
+              <span class="mytitle">最近活动 
+              </span>
+               <span class="mytitle"> 
+              <small>Events</small></span>               	
+              </div>
+              <div class="panel-body standard-vertical-bordered" style="padding: 5px 0 0 0;">
+                <ul class="events-listing-content sort-destination isotope-events" data-sort-id="events">
+                  <li class=""
+                  style="width: 95%;margin:3px 9px 0px 9px;padding-top:17px;height:133px;">
+                  
+                  <!--<div id="roll-pic" style="overflow:hidden;">-->
+                   <a id="a1" href="#" style="float:right;color:#d41e15;display:block;background: transparent url('img/neerium_re.jpg') no-repeat top;text-indent: -9999px;width:314px;height: 116px;border:none;display:block;">复旦大学学习贯彻党的十九大会议精神专题网站</a>
+                  
+                  <!--</div>-->
+
+                  </li>
+                  <li class="event-list-item dashed-bottom-bordered"
+                      style="width: 95%;margin:3px 9px 0px 9px;padding-top:17px;height:133px;">
+                    <div style="margin-left: 10px;">
+                      <div class="event-list-item-date" style="width: 90px;height: 90px;overflow: hidden;">
+                        <span class="event-date">
+                          <span class="event-day">17</span>
+                          <span class="event-month">Dec, 15</span>
+                        </span>
+                      </div>
+                      <div class="event-list-item-info myevent-list-item" style="padding:5px 0 5px 5px;">
+                        <div class="lined-info lined-title event-title" style="position: relative;padding-right: 0;max-height: 36px;overflow: hidden;">
+                          <h4 style="" class="">
+                            <a class="hover-yellow" href="#">“科学与文化”通识教育名师讲堂</a>
+                          </h4>
+                        </div>
+                        <!--先不要了
+                        <div class="event-list-item-dm">
+                          <div class="lined-info">
+                            <span class="meta-data"><i class="fa fa-clock-o"></i> <span class="event-time">2017/11/15 18:30</span></span>
+                          </div>
+                          <div class="lined-info event-location">
+                            <span class="meta-data"><i class="fa fa-map-marker"></i> <span class="event-location-address">school address</span></span>
+                          </div>
+                        </div>
+                    -->
+                      </div>
+                    </div>
+                  </li>
+                  <li class="event-list-item"
+                      style="width: 95%;margin:3px 9px 0px 9px;padding-top:17px;height:133px;">
+                    <div style="margin-left: 10px;">
+                      <div class="event-list-item-date" style="width: 90px;height: 90px;overflow: hidden;">
+                        <span class="event-date">
+                          <span class="event-day">17</span>
+                          <span class="event-month">Dec, 15</span>
+                        </span>
+                      </div>
+                      <div class="event-list-item-info myevent-list-item" style="padding:5px 0 5px 5px;">
+                        <div class="lined-info lined-title event-title" style="position: relative;padding-right: 0;max-height: 36px;overflow: hidden;">
+                          <h4 style="" class="">
+                            <a class="hover-yellow" href="#">【学校科技创新论坛】</a>
+                          </h4>
+                        </div>
+                        <!--先不要了
+                        <div class="event-list-item-dm">
+                          <div class="lined-info">
+                            <span class="meta-data"><i class="fa fa-clock-o"></i> <span class="event-time">2017/12/17 08:30</span></span>
+                          </div>
+                          <div class="lined-info event-location">
+                            <span class="meta-data"><i class="fa fa-map-marker"></i> <span class="event-location-address">教学楼一楼</span></span>
+                          </div>
+                        </div>
+                         -->
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!--<div class="panel-footer" style="margin-top: -10px;">-->
+                  <!--<span>-->
+                    <!--<a class="hover-blue" style="padding-left: 5px;font-weight: bold;"-->
+                       <!--href="http://news.fudan.edu.cn/calendar/">更多活动-->
+                      <!--<img src="images/Fudan_home_03.png" style="position: relative;top: -1px;" /></a>-->
+                  <!--</span>-->
+                <!--</div>-->
+
+              </div>
+              <div style="padding: 8px 15px;">
+                <span>
+                  <a class="hover-blue" style="padding-left: 5px;font-weight: bold;"
+                     href="#">更多活动
+                    <img src="images/Fudan_home_more_37.png" style="position: relative;top: -1px;" />
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6">
-            <h3><span class="glyphicon glyphicon-list-alt"></span>通知公告</h3>
-            <hr class="news-divider" />
-            <p>
-                <a href="#">这里是新闻内容这里是新闻内容这里是新闻内容...</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-
-            <hr class="news-divider" />
-            <a href="#">更多通知公告</a>
-        </div>
+      </div>
     </div>
 
     <!-- FOOTER -->
     <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <div class="container">
+            <div class="row">
+              <div class="about-us col-lg-3 col-sm-6 col-md-6  col-xs-6">
+                <div class="title">
+                  关于本站
+                </div>
+                <div class="row">
+                  <div class="link col-md-5 col-sm-5 col-xs-6">
+                    <a href="#" target="_blank" style="color:#000;"></a>网站指南</a>
+                  </div>
+                  <div class="link col-md-5 col-sm-5 col-xs-6">
+                    <a href="#" target="_blank" style="color:#000;"></a>更新日志</a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="link col-md-5 col-sm-5 col-xs-6">
+                     <a href="#" target="_blank" style="color:#000;">制作团队</a>
+                  </div>
+                  <div class="link col-md-5 col-sm-5 col-xs-6">
+                    <a href="#" style="color:#000;">服务信箱</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" contact-us col-lg-3 col-sm-6 col-md-6  col-xs-6">
+                <div class="title">
+                  联系我们
+                </div>
+                <div class="row">
+                  <div class="link col-md-5 col-sm-5 col-xs-6">
+                    <a href="#" target="_blank" style="color:#000;">校长信箱</a>
+                  </div>
+            <div class="link col-md-5 col-sm-5 col-xs-6">
+                    <a href="#" target="_blank" style="color:#000;">工作机会</a>
+                      </div>
+            </div>
+            <div class="row">
+                <div class="link col-md-5 col-sm-5 col-xs-6">
+                  <a href="#" target="_blank" style="color:#000;">学校招生</a>
+                </div>
+          <div class="link col-md-5 col-sm-5 col-xs-6">
+                  <a href="#" target="_blank" style="color:#000;">学校招聘</a>
+                    </div>
+          </div>
+        </div>
+        
+                  <div class="social-media col-lg-3 col-sm-6 col-md-6  col-xs-6">
+                    <div class="title">
+                      社交媒体&APP
+                    </div>
+                    <div class="row">
+                      <a href="#">
+                        <img src="imgs/weibo_76.png" />
+                      </a>
+                      <a href="#">
+                        <img src="imgs/wechat_76.png" />
+                      </a>
+                      <a href="#">
+                        <img src="imgs/renren_76.png" />
+                      </a>
+                      <a href="#">
+                        <img src="imgs/youku_76.png" />
+                      </a>
+                    </div>
+                    <div class="row">
+                      <a href="#">
+                        <img src="imgs/ifudan_70.png" />
+                      </a>
+                      <a href="#">
+                        <img src="imgs/fudan_news_70.png" />
+                      </a>
+                      <a href="#">
+                        <img src="imgs/fudanyinxiang_70.png" />
+                      </a>
+                      <a href="#">
+                        <img src="imgs/danshi_70.png" />
+                      </a>
+        
+                    </div>
+                  </div>
+                  <div class="logo col-lg-3 col-sm-6 col-md-6 col-xs-6">
+                    <div class="row">
+                      <img src="imgs/Fudan_home_logo_49.png">
+        
+                    </div>
+        
+                  </div>
+        
+        
+                </div>
+              </div>
+        
+              <div class="footer-wrapper">
+                <hr style="background:#313131 !important"/>
+        
+                <div class="container">
+        
+                  <div class="row">
+                    <div class="copyright col-lg-6 col-sm-6 col-md-6">
+                      <span>Copyright&copy;2017桦树学校版权所有&nbsp;吉ICP备:15796489</span>
+       
+        
+                    </div>
+                    <div class="info col-lg-6  col-sm-6 col-md-6">
+                      <span>地址：吉林省吉林桦甸市桦树学校</span>
+                      <span>邮编:132400</span>
+                      <span>电话:(86)0432-8888888</span>
+        
+        
+                    </div>
+                  </div>
+                </div>
+        
+              </div>
+        
     </footer>
 
 </div><!-- /.container -->
 
-<script src="../js/libs/jquery.min.js"></script>
-<script src="../js/libs/bootstrap.min.js"></script>
-<script src="../js/libs/ie10-viewport-bug-workaround.js"></script>
-
-<script src="../js/index.js"></script>
 </body>
 </html>
