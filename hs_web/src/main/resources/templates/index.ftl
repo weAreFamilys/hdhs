@@ -23,56 +23,56 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" style="font-size: 22px; margin: 0 20px;">桦树林子学校</a>
+                    <a class="navbar-brand" href="#" style="font-size: 22px; margin: 5px 20px;color: #ffffff">桦树林子学校</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="width: 160px;">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">  else here</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">One more separated</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学资源<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="width: 160px;">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">  else here</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">One more separated</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校机构<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="width: 160px;">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">  else here</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">One more separated</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园文化<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="width: 160px;">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">  else here</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">One more separated </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -144,86 +144,124 @@
 <!-- Marketing messaging and featurettes
    ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
-
 <div class="container news">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
 
-            <h3><span class="glyphicon glyphicon-list-alt"></span>学校新闻</h3>
+            <h3 style="letter-spacing: 0.2em"><span style="color: #428bca" class="glyphicon glyphicon-cd"></span>学校新闻</h3>
             <hr class="news-divider" />
-            <p>
-                <a href="#">这里是新闻内容这里是新闻内容这里是新闻内容...</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+            <div style="height: 300px;">
+                <p>
+                    <a href="#">这里是新闻内容这里是新闻内容新闻内容...</a>
+                    <span>2016-11-11</span>
+                </p>
+                <p>
+                    <a href="#" class="text-left">这里是新闻内容</a>
+                    <span>2016-11-11</span>
+                </p>
 
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+                <p>
+                    <a href="#" class="text-left">这里是新闻内容</a>
+                    <span>2016-11-11</span>
+                </p>
 
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+                <p>
+                    <a href="#" class="text-left">这里是新闻内容</a>
+                    <span>2016-11-11</span>
+                </p>
+            </div>
             <hr class="news-divider" />
             <a href="#">更多通知公告</a>
 
         </div>
-        <div class="col-lg-6">
-            <h3><span class="glyphicon glyphicon-list-alt"></span>通知公告</h3>
+        <div class="col-lg-4">
+            <h3 style="letter-spacing: 0.2em"><span style="color: #428bca" class="glyphicon glyphicon-volume-up"></span>通知公告</h3>
             <hr class="news-divider" />
-            <p>
-                <a href="#">这里是新闻内容这里是新闻内容这里是新闻内容...</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+            <div style="height: 300px;">
+                <p>
+                    <a href="#">这里是新闻内容这里容这里是新闻内容...</a>
+                    <span>2016-11-11</span>
+                </p>
+                <p>
+                    <a href="#" class="text-left">这里是新闻内容</a>
+                    <span>2016-11-11</span>
+                </p>
 
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+                <p>
+                    <a href="#" class="text-left">这里是新闻内容</a>
+                    <span>2016-11-11</span>
+                </p>
 
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+                <p>
+                    <a href="#" class="text-left">这里是新闻内容</a>
+                    <span>2016-11-11</span>
+                </p>
 
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
-            <p>
-                <a href="#" class="text-left">这里是新闻内容</a>
-                <span>2016-11-11</span>
-            </p>
+                <p>
+                    <a href="#" class="text-left">这里是新闻内容</a>
+                    <span>2016-11-11</span>
+                </p>
+            </div>
 
             <hr class="news-divider" />
             <a href="#">更多通知公告</a>
+        </div>
+
+        <div class="col-lg-4">
+            <h3 style="letter-spacing: 0.2em"><span style="color: #428bca" class="glyphicon glyphicon-education"></span>最新活动</h3>
+            <hr class="news-divider" />
+            <div style="height: 300px;">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img width="100" height="60" class="media-object" src="/img/1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">这里是标题</h4>
+                        <p>
+                            是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容
+                        </p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img width="100" height="60" class="media-object" src="/img/1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">这里是标题</h4>
+                        <p>
+                            是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容
+                        </p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img width="100" height="60" class="media-object" src="/img/1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">这里是标题</h4>
+                        <p>
+                            是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="news-divider" />
+            <a href="#">更多通知公告</a>
+
         </div>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-
 </div><!-- /.container -->
+
+<div class="col-lg-12" style="height: 100px; background-color: #e8e8e8; border-top: 1px solid #d4d4d4">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+</div>
+
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
