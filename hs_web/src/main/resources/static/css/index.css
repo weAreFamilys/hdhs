@@ -80,33 +80,20 @@ body {
 
 /* Center align the text within the three columns below the carousel */
 .news {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
-
-.news .news-divider {
-    margin: 10px 0; /* Space out the Bootstrap <hr> more */
-    background-color: #e2e2e2;
-    height: 1px;
+.news .news-li {
+    margin: 16px 0;
 }
-
-.news h3 {
-    font-size: 20px;
-    color: #000;
-    font-weight: 600;
+.news .news-ul {
+    list-style: none;
+    padding: 0px;
+    height: 300px;
 }
-
-.news .page-header {
-    margin: 20px 0 20px;
-    border-bottom: 2px solid #3c763d;
-    padding: 0;
+.news .more-icon {
+    font-size: 12px;
+    font-weight: bold;
 }
-
-.news .page-header p {
-    font-size: 16px;
-}
-
-/* Featurettes
-------------------------- */
 
 .featurette-divider {
     margin: 80px 0; /* Space out the Bootstrap <hr> more */

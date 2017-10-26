@@ -144,72 +144,42 @@
 <!-- Marketing messaging and featurettes
    ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
-<div class="container news">
-    <div class="row">
-        <div class="col-lg-4">
-
-            <h3 style="letter-spacing: 0.2em"><span style="color: #428bca" class="glyphicon glyphicon-cd"></span>学校新闻</h3>
-            <hr class="news-divider" />
-            <div style="height: 300px;">
-                <p>
-                    <a href="#">这里是新闻内容这里是新闻内容新闻内容...</a>
-                    <span>2016-11-11</span>
-                </p>
-                <p>
-                    <a href="#" class="text-left">这里是新闻内容</a>
-                    <span>2016-11-11</span>
-                </p>
-
-                <p>
-                    <a href="#" class="text-left">这里是新闻内容</a>
-                    <span>2016-11-11</span>
-                </p>
-
-                <p>
-                    <a href="#" class="text-left">这里是新闻内容</a>
-                    <span>2016-11-11</span>
-                </p>
+<div class="container">
+    <div class="row news">
+        <div class="col-sm-6 col-md-4">
+            <div class="page-header">
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-cd"></span>学校新闻 <small>Subtext for header</small></h3>
             </div>
-            <hr class="news-divider" />
-            <a href="#">更多通知公告</a>
 
+            <ul class="news-ul">
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+            </ul>
+            <hr />
+            <a href="#">更多学校新闻 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
         </div>
-        <div class="col-lg-4">
-            <h3 style="letter-spacing: 0.2em"><span style="color: #428bca" class="glyphicon glyphicon-volume-up"></span>通知公告</h3>
-            <hr class="news-divider" />
-            <div style="height: 300px;">
-                <p>
-                    <a href="#">这里是新闻内容这里容这里是新闻内容...</a>
-                    <span>2016-11-11</span>
-                </p>
-                <p>
-                    <a href="#" class="text-left">这里是新闻内容</a>
-                    <span>2016-11-11</span>
-                </p>
-
-                <p>
-                    <a href="#" class="text-left">这里是新闻内容</a>
-                    <span>2016-11-11</span>
-                </p>
-
-                <p>
-                    <a href="#" class="text-left">这里是新闻内容</a>
-                    <span>2016-11-11</span>
-                </p>
-
-                <p>
-                    <a href="#" class="text-left">这里是新闻内容</a>
-                    <span>2016-11-11</span>
-                </p>
+        <div class="col-sm-6 col-md-4">
+            <div class="page-header">
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-volume-up"></span>通知公告 <small>Subtext for header</small></h3>
             </div>
-
-            <hr class="news-divider" />
-            <a href="#">更多通知公告</a>
+            <ul class="news-ul">
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+            </ul>
+            <hr />
+            <a href="#">通知公告 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
         </div>
 
-        <div class="col-lg-4">
-            <h3 style="letter-spacing: 0.2em"><span style="color: #428bca" class="glyphicon glyphicon-education"></span>最新活动</h3>
-            <hr class="news-divider" />
+        <div class="col-sm-6 col-md-4">
+            <div class="page-header">
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-education"></span>最新活动 <small>Subtext for header</small></h3>
+            </div>
             <div style="height: 300px;">
                 <div class="media">
                     <div class="media-left">
@@ -251,13 +221,52 @@
                     </div>
                 </div>
             </div>
-            <hr class="news-divider" />
-            <a href="#">更多通知公告</a>
+            <hr />
+            <a href="#">最新活动 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
 
         </div>
     </div>
 </div><!-- /.container -->
 
+
+<div class="container">
+    <div class="page-header">
+        <h3><span style="color: #428bca; letter-spacing: 10px;" class="glyphicon glyphicon-camera"></span>校园风采 <small>Subtext for header</small></h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="/img/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="/img/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="/img/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
 <div class="col-lg-12" style="height: 100px; background-color: #e8e8e8; border-top: 1px solid #d4d4d4">
     <p class="pull-right"><a href="#">Back to top</a></p>
 </div>
