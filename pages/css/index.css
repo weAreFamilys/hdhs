@@ -83,27 +83,27 @@ body {
     margin-bottom: 40px;
 }
 
-.news .news-divider {
-    margin: 10px 0; /* Space out the Bootstrap <hr> more */
+/* .news .news-divider { 
+    margin: 10px 0; /* Space out the Bootstrap <hr> more 
     background-color: #e2e2e2;
     height: 1px;
-}
+  }  */
 
-.news h3 {
+/* .news h3 { 
     font-size: 20px;
     color: #000;
     font-weight: 600;
-}
-
+/* } */
+/*  
 .news .page-header {
     margin: 20px 0 20px;
     border-bottom: 2px solid #3c763d;
     padding: 0;
-}
-
+/* } */
+/*  
 .news .page-header p {
     font-size: 16px;
-}
+/* } */
 
 /* Featurettes
 ------------------------- */
@@ -161,4 +161,8 @@ body {
     }
 }
 
-
+/* page head style */
+.page-title{
+    letter-spacing: 0.2em;
+    color: #428bca;
+}
