@@ -31,57 +31,53 @@
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">学校简介</a></li>
-                                <li><a href="#">学校风光</a></li>
-                                <li><a href="#">学校荣誉</a></li>
+                                <li><a href="#">组织机构</a></li>
+                                <li><a href="#">办学特色</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">党建工作<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">学校简介</a></li>
-                                <li><a href="#">学校风光</a></li>
-                                <li><a href="#">学校荣誉</a></li>
+                                <li><a href="#">工作通知</a></li>
+                                <li><a href="#">党员风采</a></li>
+                                <li><a href="#">支部建设</a></li>
 
                             </ul>
                         </li>
 
+                        <li class="dropdown">
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校德育<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">工作通知</a></li>
+                                <li><a href="#">德育实践</a></li>
+                                <li><a href="#">行为教育</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学管理<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">教育教学理念</a></li>
+                                <li><a href="#">教学管理体系</a></li>
+                                <li><a href="#">学科建设特色</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教育科研<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">课题研究</a></li>
+                                <li><a href="#">科研简讯</a></li>
+                                <li><a href="#">科研指南</a></li>
+
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学资源<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">教科新闻</a></li>
-                                <li><a href="#">教研成果</a></li>
-                                <li><a href="#">教师培训</a></li>
-                                <li><a href="#">课题研究</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校机构<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">教务处</a></li>
-                                <li><a href="#">德育处</a></li>
-                                <li><a href="#">教科处</a></li>
-                                <li><a href="#">总务处</a></li>
-                                <li><a href="#">党政办</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园动态<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">通知通告</a></li>
-                                <li><a href="#">校园新闻</a></li>
-                                <li><a href="#">招生信息</a></li>
-                                <li><a href="#">教科动态</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园动态<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">通知通告</a></li>
-                                <li><a href="#">校园新闻</a></li>
-                                <li><a href="#">招生信息</a></li>
-                                <li><a href="#">教科动态</a></li>
+                                <li><a href="#">电子教案</a></li>
+                                <li><a href="#">课件</a></li>
+                                <li><a href="#">教学视频</a></li>
 
                             </ul>
                         </li>

@@ -43,7 +43,7 @@ body {
 }
 
 .navbar-wrapper .navbar .dropdown {
-    width: 120px;
+    width: 125px;
 }
 
 .navbar-wrapper .navbar .dropdown > a {
@@ -71,18 +71,18 @@ body {
 }
 
 .navbar-wrapper .navbar .dropdown-menu {
-    width: 120px;
+    width: 125px;
     background: rgba(0, 51, 153, 0.8);
     filter: alpha(opacity=20);
-    min-width: 120px;
+    min-width: 125px;
     color: #ffffff;
 }
 
 .navbar-wrapper .navbar .dropdown-menu > li > a {
     display: block;
-    padding: 3px 20px;
     clear: both;
     font-weight: normal;
+    text-align: center;
     line-height: 2;
     color: #ffffff;
     white-space: nowrap;
