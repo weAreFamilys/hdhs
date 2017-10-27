@@ -40,11 +40,86 @@ body {
     font-size: 18px;
     color: #ffffff;
     height: 60px;
-    padding-top: 21px;
 }
 
 .navbar-wrapper .navbar .dropdown {
-    width: 160px;
+    width: 120px;
+}
+
+.navbar-wrapper .navbar .dropdown > a {
+    display: block;
+    padding: 20px 18px;
+    clear: both;
+    font-weight: normal;
+    white-space: nowrap;
+    color: #fff;
+}
+.navbar-wrapper .navbar .dropdown > a:hover,
+.navbar-wrapper .navbar .dropdown > a:focus {
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(1, 102, 218, 0.8);
+}
+.navbar-wrapper .navbar .dropdown > .active > a,
+.navbar-wrapper .navbar .dropdown > .active > a:hover,
+.navbar-wrapper .navbar .dropdown > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+}
+
+.navbar-wrapper .navbar .dropdown-menu {
+    width: 120px;
+    background: rgba(0, 51, 153, 0.8);
+    filter: alpha(opacity=20);
+    min-width: 120px;
+    color: #ffffff;
+}
+
+.navbar-wrapper .navbar .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 2;
+    color: #ffffff;
+    white-space: nowrap;
+}
+.navbar-wrapper .navbar .dropdown-menu > li > a:hover,
+.navbar-wrapper .navbar .dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+.navbar-wrapper .navbar .dropdown-menu > .active > a,
+.navbar-wrapper .navbar .dropdown-menu > .active > a:hover,
+.navbar-wrapper .navbar .dropdown-menu > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #337ab7;
+    outline: 0;
+}
+
+.navbar-wrapper .navbar .navbar-right {
+    color: #ffffff;
+}
+
+.navbar-wrapper .navbar .navbar-right > li > a {
+    clear: both;
+    color: #ffffff;
+    padding-top: 20px;
+}
+.navbar-wrapper .navbar .navbar-right > li > a:hover,
+.navbar-wrapper .navbar .navbar-right > li > a:focus {
+    color: #b9b9b9;
+    text-decoration: none;
+}
+.navbar-wrapper .navbar .navbar-right > .active > a,
+.navbar-wrapper .navbar .navbar-right > .active > a:hover,
+.navbar-wrapper .navbar .navbar-right > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
 }
 
 /* CUSTOMIZE THE CAROUSEL

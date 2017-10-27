@@ -28,51 +28,61 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
-                            <ul class="dropdown-menu" style="width: 160px;">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated</a></li>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">学校简介</a></li>
+                                <li><a href="#">学校风光</a></li>
+                                <li><a href="#">学校荣誉</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学资源<span class="caret"></span></a>
-                            <ul class="dropdown-menu" style="width: 160px;">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated</a></li>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">学校简介</a></li>
+                                <li><a href="#">学校风光</a></li>
+                                <li><a href="#">学校荣誉</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学资源<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">教科新闻</a></li>
+                                <li><a href="#">教研成果</a></li>
+                                <li><a href="#">教师培训</a></li>
+                                <li><a href="#">课题研究</a></li>
+
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校机构<span class="caret"></span></a>
-                            <ul class="dropdown-menu" style="width: 160px;">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated</a></li>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校机构<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">教务处</a></li>
+                                <li><a href="#">德育处</a></li>
+                                <li><a href="#">教科处</a></li>
+                                <li><a href="#">总务处</a></li>
+                                <li><a href="#">党政办</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园文化<span class="caret"></span></a>
-                            <ul class="dropdown-menu" style="width: 160px;">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">  else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated </a></li>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园动态<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">通知通告</a></li>
+                                <li><a href="#">校园新闻</a></li>
+                                <li><a href="#">招生信息</a></li>
+                                <li><a href="#">教科动态</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园动态<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">通知通告</a></li>
+                                <li><a href="#">校园新闻</a></li>
+                                <li><a href="#">招生信息</a></li>
+                                <li><a href="#">教科动态</a></li>
+
                             </ul>
                         </li>
                     </ul>
