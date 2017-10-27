@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+  freemarker:
+    enabled: true
+    charset: utf-8
+    suffix: .ftl
+server:
+  port: 8088
+  context-path: /
+  tomcat:
+    uri-encoding: utf-8
+  session:
+    # 以秒计
+    timeout: 60
+

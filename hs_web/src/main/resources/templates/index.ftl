@@ -100,7 +100,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="first-slide" src="/img/1.jpg" alt="First slide">
+            <img class="first-slide" src="/img/11.jpg" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Example headline.</h1>
@@ -110,7 +110,7 @@
             </div>
         </div>
         <div class="item">
-            <img class="second-slide" src="/img/2.jpg" alt="Second slide">
+            <img class="second-slide" src="/img/22.jpg" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Another example headline.</h1>
@@ -120,7 +120,7 @@
             </div>
         </div>
         <div class="item">
-            <img class="third-slide" src="/img/3.jpg" alt="Third slide">
+            <img class="third-slide" src="/img/33.jpg" alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>One more for good measure.</h1>
@@ -236,7 +236,7 @@
     <div class="row">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="/img/1.jpg" alt="">
+                <img src="/img/11.jpg" alt="">
                 <div class="caption">
                     <h3>Thumbnail label</h3>
                     <p>...</p>
@@ -246,7 +246,7 @@
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="/img/1.jpg" alt="">
+                <img src="/img/22.jpg" alt="">
                 <div class="caption">
                     <h3>Thumbnail label</h3>
                     <p>...</p>
@@ -256,7 +256,7 @@
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="/img/1.jpg" alt="">
+                <img src="/img/33.jpg" alt="">
                 <div class="caption">
                     <h3>Thumbnail label</h3>
                     <p>...</p>
