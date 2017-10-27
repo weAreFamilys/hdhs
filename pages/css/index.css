@@ -53,6 +53,8 @@ body {
     font-weight: normal;
     white-space: nowrap;
     color: #fff;
+    background: rgba(0, 0, 0, 0);
+    filter: alpha(opacity=100);
   }
 .navbar-wrapper .navbar .dropdown > a:hover,
 .navbar-wrapper .navbar .dropdown > a:focus {
