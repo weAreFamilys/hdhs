@@ -7,49 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="/css/nprogress.css" rel="stylesheet">
-    <!-- Animate.css -->
-    <link href="/css/animate.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/css/custom.min.css" rel="stylesheet">
     <title>桦树林子学校</title>
 </head>
 <body class="login">
 <div>
-    <a class="hiddenanchor" id="signup"></a>
-    <a class="hiddenanchor" id="signin"></a>
-
     <div class="login_wrapper">
-        <div class="animate form login_form">
+        <div class="login_form">
             <section class="login_content">
-                <form>
+                <form id="login_form" method="post">
                     <h1>后台管理系统</h1>
                     <div>
-                        <input type="text" class="form-control" placeholder="用户名" />
+                        <input id="account" type="text" class="form-control" placeholder="用户名" />
                     </div>
                     <div>
-                        <input type="password" class="form-control" placeholder="密码" />
+                        <input id="password" type="password" class="form-control" placeholder="密 码" />
                     </div>
-                    <div>
-                        <button onclick="valid()" type="button" class="btn btn-primary">登 录</button>
+                    <div id="check_message" style="height: 20px; text-align: left;">
+
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button onclick="checkFiled()" type="button" class="btn btn-primary">登 录</button>
+                        <button type="reset" class="btn btn-primary">重 置</button>
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="separator">
                         <div class="clearfix"></div>
-                        <br/>
+                        <br />
                     </div>
                 </form>
             </section>
         </div>
     </div>
 </div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/login.js"></script>
 </body>
 </html>
-<script language="JavaScript">
-    function valid() {
-        window.location.href = "/index"
-    }
-</script>

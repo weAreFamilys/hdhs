@@ -49,12 +49,12 @@
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-user"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="index.ftl">新增用户</a></li>
+                                    <li><a href="/index">新增用户</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-home"></i> 首页信息维护 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="form.html">巨幕维护</a></li>
+                                    <li><a href="/test">巨幕维护</a></li>
                                     <li><a href="form.html">学校新闻维护</a></li>
                                     <li><a href="form_advanced.html">通知公告维护</a></li>
                                     <li><a href="form_validation.html">最新活动维护</a></li>
@@ -158,7 +158,7 @@
                     <a data-toggle="tooltip" data-placement="top" title="全屏">
                         <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
                     </a>
-                    <a data-toggle="tooltip" data-placement="top" title="退出登录" href="/login">
+                    <a data-toggle="tooltip" data-placement="top" title="退出登录" href="/login/index">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
                 </div>
@@ -176,11 +176,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">root
+                                <img src="/img/user.jpg" alt="">root
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i>退出登录</a></li>
+                                <li><a href="/login/index"><i class="fa fa-sign-out pull-right"></i>退出登录</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -194,18 +194,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Plain Page</h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>
+                        <h3>新增用户</h3>
                     </div>
                 </div>
 
@@ -216,21 +205,7 @@
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Plain Page</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
+
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
