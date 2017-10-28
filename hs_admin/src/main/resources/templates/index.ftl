@@ -49,7 +49,7 @@
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-user"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/index">新增用户</a></li>
+                                    <li><a href="/index">用户维护</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-home"></i> 首页信息维护 <span class="fa fa-chevron-down"></span></a>

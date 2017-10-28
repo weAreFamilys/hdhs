@@ -26,46 +26,35 @@ function checkCaptcha(captcha) {
     return true;
 }
 function checkFiled() {
-    var userName = $("#account").val();
-    var pwd = $("#password").val();
-    console.log(userName);
-    if (!checkUserName(userName)) {
+    var account = $("#account").val();
+    var password = $("#password").val();
+    console.log(account);
+    if (!checkUserName(account)) {
         return false;
     }
-    if (!checkPassword(pwd)) {
+    if (!checkPassword(password)) {
         return false;
     }
     // if(!checkCaptcha($("#captcha").val())){
     // 	return false;
     // }
 
-    $.post("/login/checkUser",
-        {
-            userName: userName,
-            pwd: pwd
-        },
-        function (data, status) {
-            if (data && data) {
-
-            }
-        }
-    );
-
     $.ajax({
         type:"POST",
         url:"/login/checkUser",
         data:{
-            userName: userName,
-            pwd: pwd
+            account: account,
+            password: password
         },
         datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
         //成功返回之后调用的函数
         success: function(data){
+            console.log(data);
             if (data && data.success) {
                 window.location.href = "/index";
             } else {
                 $("#check_message").css("color", "red");
-                $("#check_message").html("验证用户信息失败,重试!");
+                $("#check_message").html("用户名或密码错误,请重试!");
             }
         },
         //调用出错执行的函数
