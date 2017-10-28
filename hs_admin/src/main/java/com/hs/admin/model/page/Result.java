@@ -3,57 +3,51 @@ package com.hs.admin.model.page;
 
 public class Result implements java.io.Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public Result (boolean isSuccess) {
-		this.success = isSuccess;
-	}
+    private boolean isSuccess = false;
+    private String msg = "";
+    private Object obj = null;
 
-	public Result (boolean isSuccess, String msg) {
-		this.success = isSuccess;
-		this.msg = msg;
-	}
+    public Result(){
 
-	public Result (boolean isSuccess, String msg, Object obj) {
-		this.success = isSuccess;
-		this.msg = msg;
-		this.obj = obj;
-	}
+    }
+    public Result(boolean isSuccess) {
+        this.isSuccess = isSuccess;
+    }
 
-	private boolean success = false;
-	private String msg = "";
-	private Object obj = null;
+    public Result(boolean isSuccess, String msg) {
+        this.isSuccess = isSuccess;
+        this.msg = msg;
+    }
 
-	public String getMsg() {
-		return msg;
-	}
+    public Result(boolean isSuccess, String msg, Object obj) {
+        this.isSuccess = isSuccess;
+        this.msg = msg;
+        this.obj = obj;
+    }
 
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
+    public boolean isSuccess() {
+        return isSuccess;
+    }
 
-	public Object getObj() {
-		return obj;
-	}
+    public void setSuccess(boolean success) {
+        isSuccess = success;
+    }
 
-	public void setObj(Object obj) {
-		this.obj = obj;
-	}
+    public String getMsg() {
+        return msg;
+    }
 
-	public boolean isSuccess() {
-		return success;
-	}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-	public void setSuccess(boolean success) {
-		this.success = success;
-	}
+    public Object getObj() {
+        return obj;
+    }
 
-	@Override
-	public String toString() {
-		return "Result{" +
-				"success=" + success +
-				", msg='" + msg + '\'' +
-				", obj=" + obj +
-				'}';
-	}
+    public void setObj(Object obj) {
+        this.obj = obj;
+    }
 }
