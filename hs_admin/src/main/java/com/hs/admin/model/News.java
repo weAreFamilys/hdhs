@@ -15,7 +15,7 @@ public class News {
     private int publish; //是否已发布
     private int del; //是否已删除
     private String userId;
-    private String brief_intro; //文章简介
+    private String briefIntro; //文章简介
     private String img;
 
     public String getNewsId() {
@@ -66,6 +66,22 @@ public class News {
         this.publish = publish;
     }
 
+    @Override
+    public String toString() {
+        return "News{" +
+                "newsId='" + newsId + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", type=" + type +
+                ", createTime=" + createTime +
+                ", publish=" + publish +
+                ", del=" + del +
+                ", userId='" + userId + '\'' +
+                ", briefIntro='" + briefIntro + '\'' +
+                ", img='" + img + '\'' +
+                '}';
+    }
+
     public int getDel() {
         return del;
     }
@@ -82,12 +98,12 @@ public class News {
         this.userId = userId;
     }
 
-    public String getBrief_intro() {
-        return brief_intro;
+    public String getBriefIntro() {
+        return briefIntro;
     }
 
-    public void setBrief_intro(String brief_intro) {
-        this.brief_intro = brief_intro;
+    public void setBriefIntro(String briefIntro) {
+        this.briefIntro = briefIntro;
     }
 
     public String getImg() {
@@ -96,21 +112,5 @@ public class News {
 
     public void setImg(String img) {
         this.img = img;
-    }
-
-    @Override
-    public String toString() {
-        return "News{" +
-                "newsId='" + newsId + '\'' +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", type=" + type +
-                ", createTime=" + createTime +
-                ", publish=" + publish +
-                ", del=" + del +
-                ", userId='" + userId + '\'' +
-                ", brief_intro='" + brief_intro + '\'' +
-                ", img='" + img + '\'' +
-                '}';
     }
 }

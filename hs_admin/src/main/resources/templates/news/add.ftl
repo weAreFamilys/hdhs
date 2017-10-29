@@ -54,10 +54,10 @@
                                             文章类型 <span class="required">*</span>
                                         </label>
                                         <div class="col-md-10 col-sm-10">
-                                            <select class="form-control col-md-4 col-sm-4">
-                                                <option selected>学校新闻</option>
-                                                <option>通知公告</option>
-                                                <option>最新活动</option>
+                                            <select id="type" class="form-control col-md-4 col-sm-4">
+                                                <option value="0" selected>学校新闻</option>
+                                                <option value="1">通知公告</option>
+                                                <option value="2">最新活动</option>
                                             </select>
                                         </div>
                                     </div>
@@ -90,11 +90,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="createTime" class="control-label col-md-2 col-sm-2">
+                                        <label for="briefIntro" class="control-label col-md-2 col-sm-2">
                                             文章简介 <span class="required">*</span>
                                         </label>
                                         <div class="col-md-10 col-sm-10">
-                                            <textarea id="message" class="form-control"></textarea>
+                                            <textarea id="briefIntro" class="form-control"></textarea>
                                         </div>
                                     </div>
 
@@ -108,7 +108,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="" class="control-label col-md-2 col-sm-2">
+                                        <label class="control-label col-md-2 col-sm-2">
                                             文章内容 <span class="required">*</span>
                                         </label>
                                         <div class="col-md-10 col-sm-10">

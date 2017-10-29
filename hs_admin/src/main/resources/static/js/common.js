@@ -1,17 +1,22 @@
-function notify(text) {
+function notify(text,addclass) {
     if( typeof (PNotify) === 'undefined'){ return; }
+
+    if(type == ''){
+        addclass = 'dark'
+    } else if (type == 'success') {
+        addclass = ''
+    }
     new PNotify({
-        title: "提示",
-        type: "notice",
+        title: "消息提示",
+        type: 'notify',
         icon: true,
         animation: "fade",
         text: text,
-        addclass: 'dark',
+        addclass: addclass,
         styling: 'bootstrap3',
         hide: true,
-        delay: 3000,
+        delay: 2000,
         remove: true,
         destroy: true
     });
-
-};
+}
