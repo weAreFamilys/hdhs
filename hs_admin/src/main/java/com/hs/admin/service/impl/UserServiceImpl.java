@@ -3,6 +3,7 @@ package com.hs.admin.service.impl;
 import com.hs.admin.mapper.UserMapper;
 import com.hs.admin.model.User;
 import com.hs.admin.service.UserService;
+import com.hs.admin.util.UUIDUtil;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -20,6 +21,8 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
+    private static final String DEFAULT_PWD = "123456";
 
     @Autowired
     private UserMapper userMapper;
@@ -42,5 +45,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> userList() {
         return userMapper.getAll();
+    }
+
+    @Override
+    public void addUser(User user) {
+        user.setUserId(UUIDUtil.genUUID());
+        user.setPassword(DEFAULT_PWD);
+        userMapper.insert(user);
+    }
+
+    @Override
+    public User getUserByAccount(String account) {
+        return userMapper.getUser(account);
     }
 }

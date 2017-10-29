@@ -17,7 +17,7 @@
     <link href="/css/custom.min.css" rel="stylesheet">
 </head>
 
-<body class="nav-md footer_fixed">
+<body class="nav-md">
 <div class="container body">
     <div class="main_container">
     <#include "../nav_left.ftl">
@@ -38,11 +38,7 @@
                         <div class="x_panel">
                             <div class="x_title">
                                 <#--<h2>Table design <small>Custom design</small></h2>-->
-                                <ul class="nav navbar-left panel_toolbox">
-                                    <li>
-                                        <a data-toggle="modal" data-target="#user_add" style="color: #449d44"><i class="fa fa-plus-square"></i> 新增用户</a>
-                                    </li>
-                                </ul>
+                                    <a href="/user/add" class="btn btn-success btn-xs"><i class="fa fa-plus"></i> 新增用户 </a>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
@@ -70,8 +66,8 @@
                                             ${user.memo?default('')}
                                         </td>
                                         <td>
-                                            <a data-toggle="modal" data-target="#user" href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> 修改 </a>
+                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> 删除 </a>
                                         </td>
                                     </tr>
                                     </#list>
@@ -88,42 +84,6 @@
         <!-- /page content -->
 
     <#include "../footer.ftl">
-    </div>
-</div>
-
-<!-- 增加用户 -->
-<div class="modal fade" id="user_add" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="user">新增用户</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="user_account" class="control-label">登录账户:</label>
-                        <input type="text" class="form-control" id="user_account">
-                    </div>
-                    <div class="form-group">
-                        <label for="user_name" class="control-label">用户名:</label>
-                        <input type="text" class="form-control" id="user_name">
-                    </div>
-                    <#--<div class="form-group">-->
-                        <#--<label for="user_pwd" class="control-label">密码:</label>-->
-                        <#--<input type="password" class="form-control" id="user_pwd">-->
-                    <#--</div>-->
-                    <div class="form-group">
-                        <label for="user_memo" class="control-label">描述:</label>
-                        <input type="text" class="form-control" id="user_memo">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关 闭</button>
-                <button type="button" class="btn btn-primary">提 交</button>
-            </div>
-        </div>
     </div>
 </div>
 

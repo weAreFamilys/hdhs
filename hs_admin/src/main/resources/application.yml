@@ -1,3 +1,5 @@
+web:
+  upload-path: /Users/flyxk/GitHub/hdhs/hs_admin
 spring:
   profiles:
     active: dev
@@ -5,6 +7,10 @@ spring:
     enabled: true
     charset: utf-8
     suffix: .ftl
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
 server:
   port: 8088
   context-path: /
@@ -13,4 +19,5 @@ server:
   session:
     # 以秒计
     timeout: 60
+
 
