@@ -1,6 +1,7 @@
 package com.hs.admin.mapper;
 
 import com.hs.admin.model.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -19,6 +20,7 @@ public interface UserMapper {
     })
     User getUser(String account);
 
+    @Insert("insert into user(userid, account, password, name, memo) values(#{userId},#{account},#{password},#{name},#{memo})")
     void insert(User user);
 
     void update(User user);

@@ -9,4 +9,8 @@ public interface UserService {
     User checkUser(String account, String password);
 
     List<User> userList();
+
+    void addUser(User user);
+
+    User getUserByAccount(String account);
 }

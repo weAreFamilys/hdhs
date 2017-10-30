@@ -33,9 +33,7 @@
                     <li><a><i class="fa fa-home"></i> 首页信息维护 <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="/test">巨幕维护</a></li>
-                            <li><a href="form.html">学校新闻维护</a></li>
-                            <li><a href="form_advanced.html">通知公告维护</a></li>
-                            <li><a href="form_validation.html">最新活动维护</a></li>
+                            <li><a href="/news/list">新闻、公告、活动维护</a></li>
                             <li><a href="form_validation.html">校园风采维护</a></li>
                         </ul>
                     </li>
