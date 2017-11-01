@@ -107,14 +107,6 @@
 			<artifactId>json</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>ueditor</groupId>
-			<artifactId>ueditor</artifactId>
-			<version>1.4.3.3</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/webapp/WEB-INF/lib/ueditor.jar</systemPath>
-		</dependency>
-
 	</dependencies>
 
 	<build>
