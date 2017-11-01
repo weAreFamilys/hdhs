@@ -1,5 +1,6 @@
 package com.hs.admin.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hs.admin.model.User;
 import com.hs.admin.model.page.Result;
 import com.hs.admin.service.UserService;
@@ -8,9 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -33,12 +36,10 @@ public class LoginController {
 
     @RequestMapping("/checkUser")
     @ResponseBody
-    public Result checkUser(String account, String password) {
-        logger.info("account:" + account);
-        logger.info("password:" + password);
-        logger.info(UUIDUtil.genUUID());
+    public Result checkUser(@RequestBody Map<String,String> reqMap) {
         Result result = new Result();
-        User user = userService.checkUser(account, password);
+        result.setSuccess(false);
+        User user = userService.checkUser(reqMap.get("account"), reqMap.get("password"));
         if (user == null) {
             result.setSuccess(false);
             result.setMsg("用户名或密码错误");
