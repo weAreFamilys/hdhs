@@ -1,13 +1,18 @@
 <template>
-  <el-container class="container">
-    <el-aside class="aside" width="240px">
-      <div style="height:60px;"></div>
+  <el-row class="container">
+		<el-col :span="24" class="header">
       <el-row>
-        <el-col>
+        <el-col class="logo">桦树林子学校</el-col>
+      </el-row>
+		</el-col>
+    <el-col :span="24" class="main">
+      <el-aside class="aside" width="240px">
+      <el-row style="height:100%">
+        <el-col style="height:100%">
         <el-menu
-          style="border:0"
+          style="border:0;height:100%"
           default-active="1"
-          background-color="#fff"
+          background-color="#f1f2f7"
           >
           <el-menu-item index="1">
             <i class="el-icon-edit"></i>
@@ -58,47 +63,75 @@
       </el-col>
       </el-row>
     </el-aside>
-    <el-container>
-      <el-header class="header">
-      </el-header>
-      <el-main class="main">
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-          <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-          <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-        </el-breadcrumb>
-      </el-main>
-    </el-container>
-  </el-container>
+    <section class="content-container">
+      <div class="grid-content bg-purple-light">
+        <el-col :span="24">
+          <el-breadcrumb separator="/">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+          </el-breadcrumb>
+        </el-col>
+        <el-col :span="24" class="content-wrapper">
+          <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
+        </el-col>
+      </div>
+    </section>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
   export default {
     data () {
       return {
+        collapsed: false,
+        sysName: '桦树林子学校'
       }
     },
     mounted () {},
     methods: {
+      // 折叠导航栏
+      collapse () {
+        this.collapsed = !this.collapsed
+      }
     }
   }
 </script>
-<style>
+<style scoped>
 .container {
   position: absolute;
-  height:100%;
-  width:100%
-}
-.main {
-  width:100%;
-  height:100%;
-  background-color:#fff
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
 }
 .header {
-  background-color:#f0f0f0;
-  height:50px;
-  width:100%;
+  height: 60px;
+  line-height: 60px;
+  background: #20a0ff;
+  color:#fff;
+}
+.header .logo {
+  height:60px;
+  font-size: 22px;
+  padding-left:20px;
+  padding-right:20px;
+  width:240px;
+}
+.header .tools{
+  padding: 0px 23px;
+  width:14px;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+}
+.main {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  overflow: hidden;
 }
 .title {
   color:#fff; 
@@ -108,9 +141,21 @@
   height:60px;
 }
 .aside {
-  background-color:#fff;
-  overflow-x:hidden;
-  height:100%;
-  border-right:1px solid #E6EBF5;
+  flex:0 0 230px;
+	width: 230px;
+  height: 100%;
+}
+.content-container {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  left: 230px;
+  overflow-y: auto;
+  padding: 20px;
+}
+.content-wrapper {
+  background-color: #fff;
+  box-sizing: border-box;
 }
 </style>
