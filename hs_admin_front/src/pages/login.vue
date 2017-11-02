@@ -3,10 +3,10 @@
     <el-col :span="8" :offset="8">
       <h2 class="title">桦树林子学校网站后台管理系统</h2>
       <el-form :model="myform" ref="myform" :rules="myrules" status-icon>
-        <el-form-item label="用户名" prop="account">
+        <el-form-item label="用户名：" prop="account">
           <el-input placeholder="请输入用户名" type="text" v-model="myform.account" auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
+        <el-form-item label="密码：" prop="pass">
           <el-input placeholder="请输入密码" type="password" v-model="myform.pass" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+  import send from '../util/ajax'
   export default {
     data () {
       var validateAccount = (rule, value, callback) => {
@@ -51,12 +52,43 @@
     },
     mounted () {},
     methods: {
-      submitForm () {
-        this.$notify({
-          title: '错误',
-          message: '用户名密码错误!',
-          type: 'error',
-          duration: 3000
+      submitForm (formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            send({
+              path: '/login/checkUser',
+              data: {
+                account: this.myform.account,
+                password: this.myform.pass
+              }
+            }).then((res) => {
+              console.log(res)
+              if (res.success) {
+                console.log('登录成功')
+                this.$router.push({ path: '/index' })
+              } else {
+                this.$notify({
+                  title: '错误',
+                  message: res.msg,
+                  type: 'error',
+                  duration: 3000
+                })
+              }
+            },
+            // promise error
+            (error) => {
+              console.error(error)
+              this.$notify({
+                title: '错误',
+                message: '校验用户失败，请重试！',
+                type: 'error',
+                duration: 3000
+              })
+            })
+          } else {
+            // validate error
+            return false
+          }
         })
       }
     }
