@@ -50,12 +50,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addUser(User user) {
         user.setUserId(UUIDUtil.genUUID());
-        user.setPassword(DEFAULT_PWD);
+        user.setPassword(DigestUtils.md5Hex(DEFAULT_PWD));
         userMapper.insert(user);
     }
 
     @Override
     public User getUserByAccount(String account) {
         return userMapper.getUser(account);
+    }
+
+    @Override
+    public void delUser(String userId) {
+        userMapper.delete(userId);
     }
 }

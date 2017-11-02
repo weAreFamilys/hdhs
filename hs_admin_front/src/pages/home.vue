@@ -11,72 +11,49 @@
         <el-col style="height:100%">
         <el-menu
           style="border:0;height:100%"
-          default-active="1"
+          :default-active="$route.path"
+          router
           background-color="#f1f2f7"
           >
-          <el-menu-item index="1">
-            <i class="el-icon-edit"></i>
-            <span slot="title">用户管理</span>
-          </el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>首页信息维护</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="2-1"><i class="el-icon-caret-right"></i>巨幕维护</el-menu-item>
-              <el-menu-item index="2-2"><i class="el-icon-caret-right"></i>新闻、公告、活动维护</el-menu-item>
-              <el-menu-item index="2-3"><i class="el-icon-caret-right"></i>校园风采维护</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="3">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>学校概况维护</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="3-1"><i class="el-icon-caret-right"></i>学校简介维护</el-menu-item>
-              <el-menu-item index="3-2"><i class="el-icon-caret-right"></i>组织机构维护</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="4">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>党建工作维护</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="4-1"><i class="el-icon-caret-right"></i>学校简介维护</el-menu-item>
-              <el-menu-item index="4-2"><i class="el-icon-caret-right"></i>组织机构维护</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="5">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>学校德育维护</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="5-1"><i class="el-icon-caret-right"></i>学校简介维护</el-menu-item>
-              <el-menu-item index="5-2"><i class="el-icon-caret-right"></i>组织机构维护</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
+          <template v-for="(item, index) in $router.options.routes" v-if="!item.hidden">
+						<el-submenu :index = "index+''" v-if = "!item.leaf">
+							<template slot="title">
+                <i :class="item.icon"></i>
+                {{item.name}}
+              </template>
+							<el-menu-item 
+                v-for = "child in item.children" 
+                :index = "child.path" 
+                :key = "child.path" 
+                v-if = "!child.hidden">
+                  <i class="el-icon-arrow-right"></i>
+                  {{child.name}}
+              </el-menu-item>
+						</el-submenu>
+						<el-menu-item
+            v-if = "item.leaf && item.children.length > 0" 
+            :index = "item.children[0].path">
+              <i :class="item.icon"></i>
+              {{item.children[0].name}}
+            </el-menu-item>
+					</template>
         </el-menu>
       </el-col>
       </el-row>
     </el-aside>
     <section class="content-container">
-      <div class="grid-content bg-purple-light">
-        <el-col :span="24">
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-          </el-breadcrumb>
-        </el-col>
-        <el-col :span="24" class="content-wrapper">
-          <transition name="fade" mode="out-in">
-            <router-view></router-view>
-          </transition>
-        </el-col>
-      </div>
+      <el-col :span="24">
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
+            {{ item.name }}
+          </el-breadcrumb-item>
+        </el-breadcrumb>
+      </el-col>
+      <el-col :span="24" class="content-wrapper">
+        <transition name="fade" mode="out-in">
+          <router-view></router-view>
+        </transition>
+      </el-col>
     </section>
     </el-col>
   </el-row>
@@ -100,6 +77,12 @@
   }
 </script>
 <style scoped>
+.fa {
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 10px;
+  height: 18px;
+}
 .container {
   position: absolute;
   top: 0px;

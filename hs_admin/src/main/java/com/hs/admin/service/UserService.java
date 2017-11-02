@@ -13,4 +13,6 @@ public interface UserService {
     void addUser(User user);
 
     User getUserByAccount(String account);
+
+    void delUser(String userId);
 }

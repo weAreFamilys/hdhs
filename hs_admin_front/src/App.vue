@@ -14,6 +14,7 @@ export default {
 </script>
 
 <style>
+/* 全局 css 样式 */
 body {
 	margin: 0px;
 	padding: 0px;
@@ -28,11 +29,10 @@ body {
 	bottom: 0px;
 	width: 100%;
 }
-
 .toolbar {
 	background: #f2f2f2;
 	padding: 10px;
-	margin: 10px 0px;
+	margin: 15px 0px;
 }
 .fade-enter-active,
 .fade-leave-active {

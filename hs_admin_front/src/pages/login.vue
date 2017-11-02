@@ -67,7 +67,7 @@
               console.log(res)
               if (res.success) {
                 console.log('登录成功')
-                this.$router.push({ path: '/index' })
+                this.$router.push({ path: '/' })
               } else {
                 this.isLoading = false
                 this.$message({

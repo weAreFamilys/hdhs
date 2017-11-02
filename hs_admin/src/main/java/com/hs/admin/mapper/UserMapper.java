@@ -1,10 +1,7 @@
 package com.hs.admin.mapper;
 
 import com.hs.admin.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -25,5 +22,6 @@ public interface UserMapper {
 
     void update(User user);
 
-    void delete(Long id);
+    @Delete("delete from user where userid = #{userId}")
+    void delete(String userId);
 }

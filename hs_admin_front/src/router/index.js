@@ -1,25 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/pages/login'
-import Home from '@/pages/home'
-// import loginRouter from './loginRouter'
+import userRouter from './userRouter'
 
 Vue.use(Router)
 
 let indexRouter = [
   {
-    path: '/',
-    name: 'login',
+    path: '/login',
+    name: '登录',
+    hidden: true,
     component: Login
-  },
-  {
-    path: '/home',
-    name: 'home',
-    component: Home
-  }]
+  }
+]
 let routes = []
 .concat(indexRouter)
-// .concat(loginRouter)
+.concat(userRouter)
 
 export default new Router({
   routes
