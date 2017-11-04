@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import send from '../util/ajax'
+  import send from '@/api'
   export default {
     data () {
       var validateAccount = (rule, value, callback) => {
@@ -63,7 +63,8 @@
                 account: this.myform.account,
                 password: this.myform.pass
               }
-            }).then((res) => {
+            })
+            .then((res) => {
               console.log(res)
               if (res.success) {
                 console.log('登录成功')
@@ -76,16 +77,6 @@
                   type: 'error'
                 })
               }
-            },
-            // promise error
-            (error) => {
-              this.isLoading = false
-              console.error(error)
-              this.$message({
-                showClose: true,
-                message: '校验用户失败，请重试！',
-                type: 'error'
-              })
             })
           } else {
             // validate error

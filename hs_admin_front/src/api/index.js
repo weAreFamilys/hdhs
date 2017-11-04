@@ -1,5 +1,6 @@
 import axios from 'axios'
-const SERVER_URL = 'http://127.0.0.1:8088'
+const SERVER_URL = 'http://47.52.168.54:8088'
+
 export default function send (options = {}) {
   const {
     path = '',
@@ -17,13 +18,6 @@ export default function send (options = {}) {
     })
     .then((response) => {
       resolve(response.data)
-    })
-    .catch((error) => {
-      if (error.message === 'Network Error') {
-        reject(new Error('网络异常'))
-      } else {
-        reject(error.message)
-      }
     })
   })
 }

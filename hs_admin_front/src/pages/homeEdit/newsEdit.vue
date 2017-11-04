@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import send from '@/util/ajax'
+import send from '@/api'
   export default {
     data () {
       return {
@@ -108,37 +108,26 @@ import send from '@/util/ajax'
 				}).then(() => {
 					this.listLoading = true
 					let para = { userId: row.userId }
-						send({
-								path: '/user/del',
-								data: para
-							}).then((res) => {
-								console.log(res)
-								this.listLoading = false
-								if (res.success) {
-									this.$message({
-										message: '删除成功',
-										type: 'success'
-									})
-									this.getUsers()
-								} else {
-									this.$message({
-										message: '删除失败:' + res.msg,
-										type: 'error'
-									})
-								}
-							},
-							// promise error
-							(error) => {
-								console.error(error)
-								this.listLoading = false
-								this.$message({
-									message: '删除失败，请重试！',
-									type: 'error'
-								})
+					send({
+							path: '/user/del',
+							data: para
+					})
+					.then((res) => {
+						console.log(res)
+						this.listLoading = false
+						if (res.success) {
+							this.$message({
+								message: '删除成功',
+								type: 'success'
 							})
-
-				}).catch(() => {
-
+							this.getUsers()
+						} else {
+							this.$message({
+								message: '删除失败:' + res.msg,
+								type: 'error'
+							})
+						}
+					}) // end send
 				})
 			},
 			//新增
@@ -151,7 +140,8 @@ import send from '@/util/ajax'
 							send({
 								path: '/user/add',
 								data: para
-							}).then((res) => {
+							})
+							.then((res) => {
 								console.log(res)
 								this.addLoading = false
 								if (res.success) {
@@ -168,51 +158,33 @@ import send from '@/util/ajax'
 										type: 'error'
 									})
 								}
-							},
-							// promise error
-							(error) => {
-								console.error(error)
-								this.addLoading = false
-								this.$message({
-									message: '增加失败，请重试！',
-									type: 'error'
-								})
-							})
-					})
-					}
+							}) // end send
+						}) //end confirm
+					} // end if valid
 				})
 			},
 			getUsers () {
 				this.listLoading = true
 				send({
-              path: '/user/list',
-              data: {}
-            }).then((res) => {
-              console.log(res)
-              if (res.success) {
-                console.log('获取成功')
-									this.total = res.obj.total
-									this.users = res.obj.users
-									this.listLoading = false
-              } else {
-								this.listLoading = false
-                this.$message({
-                  showClose: true,
-                  message: res.msg,
-                  type: 'error'
-                })
-              }
-            },
-            // promise error
-            (error) => {
-              console.error(error)
+					path: '/user/list',
+					data: {}
+				})
+				.then((res) => {
+					console.log(res)
+					if (res.success) {
+						console.log('获取成功')
+							this.total = res.obj.total
+							this.users = res.obj.users
 							this.listLoading = false
-              this.$message({
-                showClose: true,
-                message: '查询失败，请重试！',
-                type: 'error'
-              })
-            })
+					} else {
+						this.listLoading = false
+						this.$message({
+							showClose: true,
+							message: res.msg,
+							type: 'error'
+						})
+					}
+				}) // end send
 			}
     }
   }

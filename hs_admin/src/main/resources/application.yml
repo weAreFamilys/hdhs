@@ -12,12 +12,11 @@ spring:
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
 server:
-  port: 8088
+  port: 8080
   context-path: /
   tomcat:
     uri-encoding: utf-8
   session:
     # 以秒计
     timeout: 60
-
 

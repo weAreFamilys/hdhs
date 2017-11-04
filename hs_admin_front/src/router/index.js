@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/pages/login'
-import userRouter from './userRouter'
+import userEditRouter from './userEditRouter'
+import homeEditRouter from './homeEditRouter'
 
 Vue.use(Router)
 
@@ -15,7 +16,8 @@ let indexRouter = [
 ]
 let routes = []
 .concat(indexRouter)
-.concat(userRouter)
+.concat(userEditRouter)
+.concat(homeEditRouter)
 
 export default new Router({
   routes

@@ -6,7 +6,7 @@
 	<groupId>com.hs.web</groupId>
 	<artifactId>hs_web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>hs_web</name>
 	<description></description>
