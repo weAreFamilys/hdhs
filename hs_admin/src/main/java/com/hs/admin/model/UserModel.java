@@ -9,7 +9,7 @@ import java.util.Date;
  * @user :flyxk
  * date :2017/10/28
  */
-public class User {
+public class UserModel {
 
     private String userId;
     private String account;
@@ -68,7 +68,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserModel{" +
                 "userId='" + userId + '\'' +
                 ", account='" + account + '\'' +
                 ", password='" + password + '\'' +

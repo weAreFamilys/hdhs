@@ -12,7 +12,7 @@ spring:
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
 server:
-  port: 8080
+  port: 8088
   context-path: /
   tomcat:
     uri-encoding: utf-8

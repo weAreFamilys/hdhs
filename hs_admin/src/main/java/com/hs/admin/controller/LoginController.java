@@ -1,10 +1,8 @@
 package com.hs.admin.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.hs.admin.model.User;
+import com.hs.admin.model.UserModel;
 import com.hs.admin.model.page.Result;
 import com.hs.admin.service.UserService;
-import com.hs.admin.util.UUIDUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * @user :flyxk
@@ -39,8 +36,8 @@ public class LoginController {
     public Result checkUser(@RequestBody Map<String,String> reqMap) {
         Result result = new Result();
         result.setSuccess(false);
-        User user = userService.checkUser(reqMap.get("account"), reqMap.get("password"));
-        if (user == null) {
+        UserModel userModel = userService.checkUser(reqMap.get("account"), reqMap.get("password"));
+        if (userModel == null) {
             result.setSuccess(false);
             result.setMsg("用户名或密码错误");
         } else {

@@ -1,14 +1,12 @@
 package com.hs.admin.controller;
 
-import com.hs.admin.model.User;
+import com.hs.admin.model.UserModel;
 import com.hs.admin.model.page.Result;
 import com.hs.admin.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,10 +28,10 @@ public class UserController {
     @RequestMapping("/list")
     public Result list(HttpServletRequest request) {
         Result result = new Result();
-        List<User> userList = userService.userList();
+        List<UserModel> userModelList = userService.userList();
         Map<String, Object> userMap = new LinkedHashMap<String, Object>();
-        userMap.put("total", (userList == null) ? 0 : userList.size());
-        userMap.put("users", userList);
+        userMap.put("total", (userModelList == null) ? 0 : userModelList.size());
+        userMap.put("users", userModelList);
         result.setSuccess(true);
         result.setObj(userMap);
         return result;
@@ -70,17 +68,17 @@ public class UserController {
             return result;
         }
 
-        User user = new User();
-        user.setName(name);
-        user.setAccount(account);
-        user.setMemo(memo);
-        User isHave = userService.getUserByAccount(account);
+        UserModel userModel = new UserModel();
+        userModel.setName(name);
+        userModel.setAccount(account);
+        userModel.setMemo(memo);
+        UserModel isHave = userService.getUserByAccount(account);
         if (isHave != null) {
             result.setSuccess(false);
             result.setMsg("账户已存在");
             return result;
         }
-        userService.addUser(user);
+        userService.addUser(userModel);
         result.setSuccess(true);
         return result;
     }

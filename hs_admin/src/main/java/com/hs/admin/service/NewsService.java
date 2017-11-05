@@ -1,8 +1,8 @@
 package com.hs.admin.service;
 
-import com.hs.admin.model.News;
+import com.hs.admin.model.NewsModel;
 
 public interface NewsService {
 
-    void addNews(News news);
+    void addNews(NewsModel newsModel);
 }

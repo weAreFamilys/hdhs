@@ -6,7 +6,7 @@ import java.util.Date;
  * @user :flyxk
  * date :2017/10/29
  */
-public class News {
+public class NewsModel {
     private String newsId;
     private String title;
     private String content;
@@ -66,22 +66,6 @@ public class News {
         this.publish = publish;
     }
 
-    @Override
-    public String toString() {
-        return "News{" +
-                "newsId='" + newsId + '\'' +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", type=" + type +
-                ", createTime=" + createTime +
-                ", publish=" + publish +
-                ", del=" + del +
-                ", userId='" + userId + '\'' +
-                ", briefIntro='" + briefIntro + '\'' +
-                ", img='" + img + '\'' +
-                '}';
-    }
-
     public int getDel() {
         return del;
     }
@@ -112,5 +96,21 @@ public class News {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    @Override
+    public String toString() {
+        return "NewsModel{" +
+                "newsId='" + newsId + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", type=" + type +
+                ", createTime=" + createTime +
+                ", publish=" + publish +
+                ", del=" + del +
+                ", userId='" + userId + '\'' +
+                ", briefIntro='" + briefIntro + '\'' +
+                ", img='" + img + '\'' +
+                '}';
     }
 }

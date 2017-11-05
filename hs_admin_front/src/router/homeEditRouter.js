@@ -1,4 +1,6 @@
-import NewsEdit from '@/pages/homeEdit/newsEdit'
+import NewsEdit from '@/pages/homeEdit/news/edit'
+import CarouselEdit from '@/pages/homeEdit/carousel/edit'
+import CarouselAdd from '@/pages/homeEdit/carousel/add'
 import Home from '@/pages/home'
 let newsEditRouter = [
   {
@@ -7,8 +9,9 @@ let newsEditRouter = [
     component: Home,
     icon: 'fa fa fa-bars',
     children: [
-      {path: '/index/carosel', component: Home, name: '巨幕维护'},
-      {path: '/index/news', component: NewsEdit, name: '新闻、公告、活动维护'}
+      {path: '/home/carousel/edit', component: CarouselEdit, name: '首页轮播维护'},
+      {path: '/home/carousel/add', component: CarouselAdd, name: '首页轮播增加', hidden: true},
+      {path: '/home/news/edit', component: NewsEdit, name: '新闻、公告、活动维护'}
     ]
   }
 ]

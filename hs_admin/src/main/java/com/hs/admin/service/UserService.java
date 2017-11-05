@@ -1,18 +1,18 @@
 package com.hs.admin.service;
 
-import com.hs.admin.model.User;
+import com.hs.admin.model.UserModel;
 
 import java.util.List;
 
 public interface UserService {
 
-    User checkUser(String account, String password);
+    UserModel checkUser(String account, String password);
 
-    List<User> userList();
+    List<UserModel> userList();
 
-    void addUser(User user);
+    void addUser(UserModel userModel);
 
-    User getUserByAccount(String account);
+    UserModel getUserByAccount(String account);
 
     void delUser(String userId);
 }

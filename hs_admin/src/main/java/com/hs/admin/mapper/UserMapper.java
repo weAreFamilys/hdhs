@@ -1,6 +1,6 @@
 package com.hs.admin.mapper;
 
-import com.hs.admin.model.User;
+import com.hs.admin.model.UserModel;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -8,19 +8,19 @@ import java.util.List;
 public interface UserMapper {
 
     @Select("select * from user")
-    List<User> getAll();
+    List<UserModel> getAll();
 
     @Select("select * from user where account = #{account}")
     @Results({
         @Result(column = "create_time", property = "createTime"),
             @Result(column = "userid", property = "userId")
     })
-    User getUser(String account);
+    UserModel getUser(String account);
 
     @Insert("insert into user(userid, account, password, name, memo) values(#{userId},#{account},#{password},#{name},#{memo})")
-    void insert(User user);
+    void insert(UserModel userModel);
 
-    void update(User user);
+    void update(UserModel userModel);
 
     @Delete("delete from user where userid = #{userId}")
     void delete(String userId);

@@ -1,6 +1,6 @@
 package com.hs.admin.controller;
 
-import com.hs.admin.model.News;
+import com.hs.admin.model.NewsModel;
 import com.hs.admin.model.page.Result;
 import com.hs.admin.service.NewsService;
 import org.slf4j.Logger;
@@ -34,10 +34,10 @@ public class NewsController {
 
     @RequestMapping("/addCommit")
     @ResponseBody
-    public Result addCommit(News news) {
+    public Result addCommit(NewsModel newsModel) {
         Result result = new Result();
-        logger.info(news.toString());
-        newsService.addNews(news);
+        logger.info(newsModel.toString());
+        newsService.addNews(newsModel);
         result.setSuccess(true);
         result.setMsg("操作成功!");
         return result;

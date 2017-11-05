@@ -1,7 +1,7 @@
 package com.hs.admin.service.impl;
 
 import com.hs.admin.mapper.UserMapper;
-import com.hs.admin.model.User;
+import com.hs.admin.model.UserModel;
 import com.hs.admin.service.UserService;
 import com.hs.admin.util.UUIDUtil;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -28,34 +28,34 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User checkUser(String account, String password) {
+    public UserModel checkUser(String account, String password) {
         if (StringUtils.isBlank(account) || StringUtils.isBlank(password)) {
             throw new IllegalArgumentException("用户名或密码为空");
         }
-        User user = userMapper.getUser(account);
-        if (null == user) {
+        UserModel userModel = userMapper.getUser(account);
+        if (null == userModel) {
             return null;
         }
-        if (DigestUtils.md5Hex(password).equals(user.getPassword())) {
-            return user;
+        if (DigestUtils.md5Hex(password).equals(userModel.getPassword())) {
+            return userModel;
         }
         return null;
     }
 
     @Override
-    public List<User> userList() {
+    public List<UserModel> userList() {
         return userMapper.getAll();
     }
 
     @Override
-    public void addUser(User user) {
-        user.setUserId(UUIDUtil.genUUID());
-        user.setPassword(DigestUtils.md5Hex(DEFAULT_PWD));
-        userMapper.insert(user);
+    public void addUser(UserModel userModel) {
+        userModel.setUserId(UUIDUtil.genUUID());
+        userModel.setPassword(DigestUtils.md5Hex(DEFAULT_PWD));
+        userMapper.insert(userModel);
     }
 
     @Override
-    public User getUserByAccount(String account) {
+    public UserModel getUserByAccount(String account) {
         return userMapper.getUser(account);
     }
 

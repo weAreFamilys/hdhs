@@ -1,5 +1,6 @@
 import axios from 'axios'
-const SERVER_URL = 'http://47.52.168.54:8088'
+// const SERVER_URL = 'http://47.52.168.54:8088'
+const SERVER_URL = 'http://127.0.0.1:8088'
 
 export default function send (options = {}) {
   const {
