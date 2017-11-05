@@ -23,7 +23,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public void addNews(NewsModel newsModel) {
-        newsModel.setNewsId(UUIDUtil.genUUID());
+        newsModel.setN_id(UUIDUtil.genUUID());
         newsMapper.insert(newsModel);
     }
 

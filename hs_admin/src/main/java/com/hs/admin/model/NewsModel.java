@@ -7,110 +7,111 @@ import java.util.Date;
  * date :2017/10/29
  */
 public class NewsModel {
-    private String newsId;
-    private String title;
-    private String content;
-    private int type; //文章类型
-    private Date createTime;
-    private int publish; //是否已发布
-    private int del; //是否已删除
-    private String userId;
-    private String briefIntro; //文章简介
-    private String img;
 
-    public String getNewsId() {
-        return newsId;
+    private String n_id;
+    private String n_title;
+    private String n_content;
+    private int n_type; //文章类型
+    private Date n_create_time;
+    private int n_is_publish; //是否已发布
+    private int n_is_delete; //是否已删除
+    private String n_user_id;
+    private String n_brief_intro; //文章简介
+    private String n_img;
+
+    public String getN_id() {
+        return n_id;
     }
 
-    public void setNewsId(String newsId) {
-        this.newsId = newsId;
+    public void setN_id(String n_id) {
+        this.n_id = n_id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getN_title() {
+        return n_title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setN_title(String n_title) {
+        this.n_title = n_title;
     }
 
-    public String getContent() {
-        return content;
+    public String getN_content() {
+        return n_content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setN_content(String n_content) {
+        this.n_content = n_content;
     }
 
-    public int getType() {
-        return type;
+    public int getN_type() {
+        return n_type;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setN_type(int n_type) {
+        this.n_type = n_type;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getN_create_time() {
+        return n_create_time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setN_create_time(Date n_create_time) {
+        this.n_create_time = n_create_time;
     }
 
-    public int getPublish() {
-        return publish;
+    public int getN_is_publish() {
+        return n_is_publish;
     }
 
-    public void setPublish(int publish) {
-        this.publish = publish;
+    public void setN_is_publish(int n_is_publish) {
+        this.n_is_publish = n_is_publish;
     }
 
-    public int getDel() {
-        return del;
+    public int getN_is_delete() {
+        return n_is_delete;
     }
 
-    public void setDel(int del) {
-        this.del = del;
+    public void setN_is_delete(int n_is_delete) {
+        this.n_is_delete = n_is_delete;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getN_user_id() {
+        return n_user_id;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setN_user_id(String n_user_id) {
+        this.n_user_id = n_user_id;
     }
 
-    public String getBriefIntro() {
-        return briefIntro;
+    public String getN_brief_intro() {
+        return n_brief_intro;
     }
 
-    public void setBriefIntro(String briefIntro) {
-        this.briefIntro = briefIntro;
+    public void setN_brief_intro(String n_brief_intro) {
+        this.n_brief_intro = n_brief_intro;
     }
 
-    public String getImg() {
-        return img;
+    public String getN_img() {
+        return n_img;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setN_img(String n_img) {
+        this.n_img = n_img;
     }
 
     @Override
     public String toString() {
         return "NewsModel{" +
-                "newsId='" + newsId + '\'' +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", type=" + type +
-                ", createTime=" + createTime +
-                ", publish=" + publish +
-                ", del=" + del +
-                ", userId='" + userId + '\'' +
-                ", briefIntro='" + briefIntro + '\'' +
-                ", img='" + img + '\'' +
+                "n_id='" + n_id + '\'' +
+                ", n_title='" + n_title + '\'' +
+                ", n_content='" + n_content + '\'' +
+                ", n_type=" + n_type +
+                ", n_create_time=" + n_create_time +
+                ", n_is_publish=" + n_is_publish +
+                ", n_is_delete=" + n_is_delete +
+                ", n_user_id='" + n_user_id + '\'' +
+                ", n_brief_intro='" + n_brief_intro + '\'' +
+                ", n_img='" + n_img + '\'' +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package com.hs.admin.model;
+package com.hs.web.model;
 
 import java.util.Date;
 

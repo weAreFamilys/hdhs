@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import 'font-awesome/css/font-awesome.min.css'
+import filter from './util/filter'
 
 import '../static/ueditor/ueditor.config.js'
 import '../static/ueditor/ueditor.all.min.js'
@@ -13,7 +14,9 @@ import '../static/ueditor/lang/zh-cn/zh-cn.js'
 import '../static/ueditor/ueditor.parse.min.js'
 
 Vue.config.productionTip = false
-
+Object.keys(filter).forEach((key) => {
+  Vue.filter(key, filter[key])
+})
 Vue.use(ElementUI)
 
 /* eslint-disable no-new */

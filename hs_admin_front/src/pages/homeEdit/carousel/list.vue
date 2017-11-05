@@ -4,22 +4,32 @@
 		<el-col :span="24" class="toolbar" style="padding-bottom: 0px">
 			<el-form :inline="true">
 				<el-form-item>
-					<el-button type="primary" @click="$router.push('/home/carousel/add')"><i class="fa fa-plus"></i> 新增</el-button>
+					<el-button type="primary" @click="toAddPage"><i class="fa fa-plus"></i> 新增</el-button>
 				</el-form-item>
 			</el-form>
 		</el-col>
 
 		<!--列表-->
 		<el-table :data="carousels" border highlight-current-row v-loading="listLoading" @selection-change="selsChange" style="width: 100%">
-			<el-table-column align="center" type="index" width="55" label=" ">
+			<el-table-column prop="c_index" label="索引" width="80" sortable>
 			</el-table-column>
-			<el-table-column prop="c_index" label="" width="120" sortable>
+			<el-table-column label="图片" min-width="300">
+				<template slot-scope="scope">
+					<img style="width:280px;height:150px;" :src="scope.row.c_img" />
+				</template>
 			</el-table-column>
-			<el-table-column prop="c_create_time" label="创建日期" width="120" sortable>
+			<el-table-column prop="c_is_publish" label="是否发布" sortable>
+				<template slot-scope="scope">
+					<span v-if="scope.row.c_is_publish === 1">已发布</span>
+					<span v-else>未发布</span>
+				</template>
 			</el-table-column>
-			<el-table-column prop="c_publish" label="是否发布" min-width="180" sortable>
+			<el-table-column prop="c_create_time" min-width="110" label="创建日期" sortable>
+				<template slot-scope="scope">
+					{{scope.row.c_create_time | formateDate}}
+				</template>
 			</el-table-column>
-			<el-table-column label="操作">
+			<el-table-column label="操作" width="150">
 				<template slot-scope="scope">
 					<el-button
 						size="mini"
@@ -69,14 +79,16 @@ import send from '@/api'
         page: 2,
         listLoading: false,
         sels: [],
-        carousels: [],
-				addFormVisible: false
+        carousels: []
 			}
     },
     mounted () {
 			this.getCarousels()
 		},
     methods: {
+			toAddPage () {
+				this.$router.push('/home/carousel/add');
+			},
 			// 获取轮播列表
 			getCarousels () {
 				this.listLoading = true
@@ -104,24 +116,26 @@ import send from '@/api'
       selsChange (sels) {
         this.sels = sels
       },
-			//显示新增界面
-			handleAdd () {
-				this.addFormVisible = true
-				this.addForm = {
-					account: '',
-					name: '',
-					memo: ''
-				}
+			// 修改
+			handleEdit (index, row) {
+				// 跳转到修改页
+				// path 和 params不能一起使用
+				this.$router.push({
+					path: '/home/carousel/edit',
+					query: {
+						id: row.c_id
+					}
+				});
 			},
-			//删除
+			// 删除
 			handleDelete (index, row) {
 				this.$confirm('确认删除该记录吗?', '提示', {
 					type: 'warning'
 				}).then(() => {
 					this.listLoading = true
-					let para = { userId: row.userId }
+					let para = { c_id: row.c_id }
 					send({
-							path: '/user/del',
+							path: '/carousel/del',
 							data: para
 					})
 					.then((res) => {
@@ -132,7 +146,7 @@ import send from '@/api'
 								message: '删除成功',
 								type: 'success'
 							})
-							this.getUsers()
+							this.getCarousels()
 						} else {
 							this.$message({
 								message: '删除失败:' + res.msg,
@@ -140,39 +154,6 @@ import send from '@/api'
 							})
 						}
 					}) // end send
-				})
-			},
-			//新增
-			addSubmit () {
-				this.$refs.addForm.validate((valid) => {
-					if (valid) {
-						this.$confirm('确认提交吗？', '提示', {}).then(() => {
-							this.addLoading = true
-							let para = Object.assign({}, this.addForm)
-							send({
-								path: '/user/add',
-								data: para
-							})
-							.then((res) => {
-								console.log(res)
-								this.addLoading = false
-								if (res.success) {
-									this.$message({
-										message: '增加成功',
-										type: 'success'
-									})
-									this.$refs['addForm'].resetFields()
-									this.addFormVisible = false
-									this.getUsers()
-								} else {
-									this.$message({
-										message: '增加失败：' + res.msg,
-										type: 'error'
-									})
-								}
-							}) // end send
-						}) //end confirm
-					} // end if valid
 				})
 			}
     }
