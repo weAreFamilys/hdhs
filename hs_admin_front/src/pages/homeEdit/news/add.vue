@@ -13,10 +13,10 @@
 		<el-form-item label="标题" prop="n_title">
 			<el-input type="text" placeholder="请输入标题" v-model="form.n_title"></el-input>
 		</el-form-item>
-
 		<el-form-item label="描述" prop="n_desc">
 			<el-input :autosize="{ minRows: 4, maxRows: 6}" type="textarea" placeholder="请输入描述" v-model="form.n_desc"></el-input>
 		</el-form-item>
+		
 		<el-form-item label="图片" prop="n_img">
 			<el-button @click="uploadImg" type="success">上传图片<i class="el-icon-upload el-icon--right"></i></el-button>
 			<div v-show="uploadImgIsShow" style="margin-top:20px;">
@@ -129,14 +129,14 @@ import send from '@/api'
 					if (valid) {
 						this.$confirm('确认提交？', '提示').then(() => {
 							this.sumitBtnIsLoading = true
-							let content = this.contentUeditor.getContent()
+							let content = this.contentUeditor.getContent();
 							if (content) {
 								this.form.n_content = content
 							}
 							let para = Object.assign({}, this.form)
 							console.log(this.form)
 							send({
-								path: '/news/edit',
+								path: '/news/add',
 								data: para
 							})
 							.then((res) => {
@@ -144,13 +144,13 @@ import send from '@/api'
 								this.sumitBtnIsLoading = false
 								if (res.success) {
 									this.$message({
-										message: '修改成功',
+										message: '增加成功',
 										type: 'success'
 									})
 									this.$router.push('/home/news/list')
 								} else {
 									this.$message({
-										message: '修改失败：' + res.msg,
+										message: '增加失败：' + res.msg,
 										type: 'error'
 									})
 								}
@@ -158,44 +158,7 @@ import send from '@/api'
 						}) //end confirm
 					} // end if valid
 				})
-			},// end submitForm
-			getCarousel(n_id){
-				send({
-					path: '/news/getById',
-					data: {
-						n_id
-					}
-				})
-				.then((res) => {
-					console.log(res)
-					if (res.success) {
-						
-						this.form.n_index = res.obj.n_index + ''
-						this.form.n_is_publish = res.obj.n_is_publish + ''
-						this.form.n_title = res.obj.n_title
-						this.form.n_id = res.obj.n_id
-						this.form.n_desc = res.obj.n_desc
-						this.form.n_type = res.obj.n_type + ''
-						// 显示图片
-						if (res.obj.n_img !== '') {
-							this.form.n_img = res.obj.n_img
-							this.uploadImgIsShow = true
-						}
-						// 显示内容
-						this.form.n_content = res.obj.n_content
-						this.contentUeditor.addListener("ready", () => {
-							this.contentUeditor.setContent(this.form.n_content)
-						})
-
-					} else {
-						this.$message({
-							message: '获取数据失败！',
-							type: 'error'
-						})
-						this.$router.push('/home/news/list');
-					}
-				}) // end send
-			}
+			}// end submitForm
 		},
 		destroyed () {
 			this.uploadImgUeditor.destroy();
@@ -203,7 +166,6 @@ import send from '@/api'
 		},
 		mounted () {
 			this.initUE();
-			this.getCarousel(this.$route.query.id);
 		}
 	}
 

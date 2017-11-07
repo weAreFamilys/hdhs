@@ -1,6 +1,5 @@
 package com.hs.admin.mapper.provider;
 
-import com.hs.admin.model.CarouselModel;
 import com.hs.admin.model.SchoolLifeModel;
 import org.apache.ibatis.jdbc.SQL;
 
