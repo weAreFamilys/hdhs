@@ -2,6 +2,7 @@ package com.hs.web.controller;
 
 import com.hs.web.model.CarouselModel;
 import com.hs.web.service.CarouselService;
+import com.hs.web.service.SchoolLifeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,13 @@ public class IndexController {
 
     @Autowired
     CarouselService carouselService;
+    @Autowired
+    SchoolLifeService schoolLifeService;
 
     @RequestMapping("/")
     public String index(HttpServletRequest request) {
         request.setAttribute("carouselList", carouselService.carouselList());
+        request.setAttribute("schoolLifeList", schoolLifeService.list());
         return "/index";
     }
 }

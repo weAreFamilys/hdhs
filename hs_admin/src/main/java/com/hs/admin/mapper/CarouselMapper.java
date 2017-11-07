@@ -20,7 +20,7 @@ public interface CarouselMapper {
     @Select("select * from Carousel where c_id = #{c_id}")
     CarouselModel getOne(String c_id);
 
-    @UpdateProvider(type = CarouselProvider.class, method = "carouselUpdate")
+    @UpdateProvider(type = CarouselProvider.class, method = "update")
     void update(CarouselModel carouselModel);
 
 }

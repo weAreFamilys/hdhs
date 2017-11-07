@@ -183,6 +183,49 @@ body {
     letter-spacing: -1px;
 }
 
+.view {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default
+}
+.view .mask,
+.view .content {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+.view img {
+    display: block;
+    position: relative
+}
+
+.mask.no-caption .tools {
+    margin: 90px 0 0 0
+}
+
+.view a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000
+}
+.view-first img {
+    transition: all 0.2s linear
+}
+
+.view-first:hover img {
+    transform: scale(1.1)
+}
+.view-first:hover .mask {
+    opacity: 1
+}
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 

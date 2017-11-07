@@ -1,5 +1,8 @@
 package com.hs.admin.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.hs.admin.constants.Page;
 import com.hs.admin.model.UserModel;
 import com.hs.admin.model.page.Result;
 import com.hs.admin.service.UserService;
@@ -9,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,14 +28,21 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/list")
-    public Result list(HttpServletRequest request) {
+    public Result list(@RequestBody Map<String, Integer> reqMap) {
+        int pageNum = reqMap.get("pageNum") == null ? Page.PAGE_NUM : reqMap.get("pageNum");
+        int pageSize = reqMap.get("pageSize") == null ? Page.PAGE_SIZE : reqMap.get("pageSize");
+
         Result result = new Result();
+        PageHelper.startPage(pageNum, pageSize);
         List<UserModel> userModelList = userService.userList();
-        Map<String, Object> userMap = new LinkedHashMap<String, Object>();
-        userMap.put("total", (userModelList == null) ? 0 : userModelList.size());
-        userMap.put("users", userModelList);
+
+        PageInfo<UserModel> pageInfo = new PageInfo<UserModel>(userModelList);
+
+        Map<String, Object> dataMap = new LinkedHashMap<String, Object>();
+        dataMap.put("page", pageInfo);
+        dataMap.put("users", userModelList);
         result.setSuccess(true);
-        result.setObj(userMap);
+        result.setObj(dataMap);
         return result;
     }
 

@@ -17,7 +17,8 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">导航菜单</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -28,7 +29,8 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校概况<span class="caret"></span></a>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">学校概况<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">学校简介</a></li>
                                 <li><a href="#">组织机构</a></li>
@@ -36,7 +38,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">党建工作<span class="caret"></span></a>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">党建工作<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">工作通知</a></li>
                                 <li><a href="#">党员风采</a></li>
@@ -46,7 +49,8 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学校德育<span class="caret"></span></a>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">学校德育<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">工作通知</a></li>
                                 <li><a href="#">德育实践</a></li>
@@ -55,7 +59,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学管理<span class="caret"></span></a>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">教学管理<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">教育教学理念</a></li>
                                 <li><a href="#">教学管理体系</a></li>
@@ -64,7 +69,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教育科研<span class="caret"></span></a>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">教育科研<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">课题研究</a></li>
                                 <li><a href="#">科研简讯</a></li>
@@ -73,7 +79,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教学资源<span class="caret"></span></a>
+                            <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">教学资源<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">电子教案</a></li>
                                 <li><a href="#">课件</a></li>
@@ -95,32 +102,31 @@
     </div>
 </div>
 
-<!-- Carousel
-   ================================================== -->
+<!-- Carousel -->
 <#if (carouselList?size > 0)>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
     <ol class="carousel-indicators">
         <#list carouselList as carousel>
             <li data-slide-to="${carousel_index}" <#if (carousel_index == 0)>class="active"</#if>></li>
         </#list>
     </ol>
-
     <div class="carousel-inner" role="listbox">
-    <#list carouselList as carousel>
-        <div class="item <#if (carousel_index == 0)>active</#if>">
-            <img src="${carousel.c_img}" />
-            <!--
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Example headline.</h1>
-                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+        <#list carouselList as carousel>
+            <div class="item <#if (carousel_index == 0)>active</#if>">
+                <img src="${carousel.c_img}"/>
+
+                <div class="container">
+                    <div class="carousel-caption">
+
+                        <h1>${carousel.c_title?default('')}</h1>
+                        <p>${carousel.c_desc?default('')}</p>
+                        <#if (carousel.c_content != '')>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">详细信息</a></p>
+                        </#if>
+                    </div>
                 </div>
             </div>
-            -->
-        </div>
-    </#list>
+        </#list>
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -130,57 +136,19 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">后翻</span>
     </a>
-    <!-- Indicators
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img class="first-slide" src="/img/11.jpg" alt="First slide">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Example headline.</h1>
-                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img class="second-slide" src="/img/22.jpg" alt="Second slide">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img class="third-slide" src="/img/33.jpg" alt="Third slide">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>One more for good measure.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-     -->
-
-</div><!-- /.carousel -->
+</div>
+<#else>
+<div style="height: 300px; background-color: #eeeeee"></div>
 </#if>
+<!-- /carousel -->
 
-<!-- Marketing messaging and featurettes
-   ================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
 <div class="container">
     <div class="row news">
         <div class="col-sm-6 col-md-4">
             <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-cd"></span>学校新闻 <small>Subtext for header</small></h3>
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-cd"></span>学校新闻
+                    <small>Subtext for header</small>
+                </h3>
             </div>
 
             <ul class="news-ul">
@@ -190,12 +158,14 @@
                 <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
                 <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
             </ul>
-            <hr />
+            <hr/>
             <a href="#">更多学校新闻 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-volume-up"></span>通知公告 <small>Subtext for header</small></h3>
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-volume-up"></span>通知公告
+                    <small>Subtext for header</small>
+                </h3>
             </div>
             <ul class="news-ul">
                 <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
@@ -204,13 +174,15 @@
                 <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
                 <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
             </ul>
-            <hr />
+            <hr/>
             <a href="#">通知公告 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
         </div>
 
         <div class="col-sm-6 col-md-4">
             <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-education"></span>最新活动 <small>Subtext for header</small></h3>
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-education"></span>最新活动
+                    <small>Subtext for header</small>
+                </h3>
             </div>
             <div style="height: 300px;">
                 <div class="media">
@@ -253,51 +225,39 @@
                     </div>
                 </div>
             </div>
-            <hr />
+            <hr/>
             <a href="#">最新活动 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
 
         </div>
     </div>
 </div><!-- /.container -->
 
-
+<!-- 校园生活 -->
+<div style="width:100%;height: 100%;background-color: #122b40">
 <div class="container">
     <div class="page-header">
-        <h3><span style="color: #428bca; letter-spacing: 10px;" class="glyphicon glyphicon-camera"></span>校园风采 <small>Subtext for header</small></h3>
+        <h3 style="color: #fff;"><span style="color: #fff; letter-spacing: 10px;" class="glyphicon glyphicon-camera"></span>校园生活
+            <small style="color: #fff;">School Life</small>
+        </h3>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="/img/11.jpg" alt="">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-
+        <#list schoolLifeList as schoolLife>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="image view view-first">
+                        <img style="width: 100%;height: 220px;" src="${schoolLife.s_img}" alt="">
+                    </div>
+                    <div class="caption">
+                        <h3>${schoolLife.s_title}</h3>
+                        <p style="height: 60px;overflow: hidden">${schoolLife.s_desc}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="/img/22.jpg" alt="">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="/img/33.jpg" alt="">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                </div>
-            </div>
-        </div>
+        </#list>
     </div>
 </div>
-
+<!-- /校园生活 -->
+</div>
 <!-- footer -->
 <div class="col-lg-12" style="height: 100px; background-color: #e8e8e8; border-top: 1px solid #d4d4d4">
     <p class="pull-right"><a href="#">Back to top</a></p>

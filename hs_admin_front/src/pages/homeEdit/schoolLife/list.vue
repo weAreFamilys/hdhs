@@ -10,23 +10,23 @@
 		</el-col>
 
 		<!--列表-->
-		<el-table :data="carousels" border highlight-current-row v-loading="listLoading" @selection-change="selsChange" style="width: 100%">
-			<el-table-column prop="c_index" label="索引" width="80" sortable>
+		<el-table :data="lists" border highlight-current-row v-loading="listLoading" @selection-change="selsChange" style="width: 100%">
+			<el-table-column prop="s_index" label="索引" width="80" sortable>
 			</el-table-column>
 			<el-table-column label="图片" min-width="300">
 				<template slot-scope="scope">
-					<img style="width:280px;height:150px;" :src="scope.row.c_img" />
+					<img style="width:280px;height:150px;" :src="scope.row.s_img" />
 				</template>
 			</el-table-column>
-			<el-table-column prop="c_is_publish" label="是否发布" sortable>
+			<el-table-column prop="s_is_publish" label="是否发布" sortable>
 				<template slot-scope="scope">
-					<span v-if="scope.row.c_is_publish === 1">已发布</span>
+					<span v-if="scope.row.s_is_publish === 1">已发布</span>
 					<span v-else>未发布</span>
 				</template>
 			</el-table-column>
-			<el-table-column prop="c_create_time" min-width="110" label="创建日期" sortable>
+			<el-table-column prop="s_create_time" min-width="110" label="创建日期" sortable>
 				<template slot-scope="scope">
-					{{scope.row.c_create_time | formateDate}}
+					{{scope.row.s_create_time | formateDate}}
 				</template>
 			</el-table-column>
 			<el-table-column label="操作" width="150">
@@ -41,6 +41,7 @@
 				</template>
     </el-table-column>
 		</el-table>
+		
 		<!--工具条-->
 		<el-col :span="24" class="toolbar">
 			<!-- 分页 -->
@@ -61,30 +62,33 @@ import send from '@/api'
 				pageSizes: [10,20,30],
         listLoading: false,
         sels: [],
-        carousels: []
+        lists: []
 			}
     },
     mounted () {
-			this.getCarousels()
+			this.getLists()
 		},
     methods: {
 			toAddPage () {
-				this.$router.push('/home/carousel/add');
+				this.$router.push('/home/schoolLife/add');
 			},
 			handleCurrentChange (pageNum) {
 				this.pageNum = pageNum
-				this.getCarousels()
+				this.getLists()
 			},
 			handleSizeChange (pageSize) {
 				this.pageSize = pageSize
-				this.getCarousels()
+				this.getLists()
 			},
 			// 获取轮播列表
-			getCarousels () {
+			getLists () {
 				this.listLoading = true
 				send({
-					path: '/carousel/list',
-					data: {}
+					path: '/schoolLife/list',
+					data: {
+						pageSize: this.pageSize,
+						pageNum: this.pageNum
+					}
 				})
 				.then((res) => {
 					console.log(res)
@@ -93,7 +97,7 @@ import send from '@/api'
 							const pageInfo = res.obj.page
 							this.total = pageInfo.total
 							this.pageNum = pageInfo.pageNum
-							this.carousels = pageInfo.list
+							this.lists = pageInfo.list
 							this.listLoading = false
 					} else {
 						this.listLoading = false
@@ -113,9 +117,9 @@ import send from '@/api'
 				// 跳转到修改页
 				// path 和 params不能一起使用
 				this.$router.push({
-					path: '/home/carousel/edit',
+					path: '/home/schoolLife/edit',
 					query: {
-						id: row.c_id
+						id: row.s_id
 					}
 				});
 			},
@@ -125,9 +129,9 @@ import send from '@/api'
 					type: 'warning'
 				}).then(() => {
 					this.listLoading = true
-					let para = { c_id: row.c_id }
+					let para = { s_id: row.s_id }
 					send({
-							path: '/carousel/del',
+							path: '/schoolLife/del',
 							data: para
 					})
 					.then((res) => {
@@ -138,7 +142,7 @@ import send from '@/api'
 								message: '删除成功',
 								type: 'success'
 							})
-							this.getCarousels()
+							this.getLists()
 						} else {
 							this.$message({
 								message: '删除失败:' + res.msg,

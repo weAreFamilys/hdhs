@@ -9,7 +9,7 @@ import org.apache.ibatis.jdbc.SQL;
  */
 public class CarouselProvider {
 
-    public String carouselUpdate (final CarouselModel carouselModel) {
+    public String update (final CarouselModel carouselModel) {
         return new SQL(){
             {
                 UPDATE("Carousel");

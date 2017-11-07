@@ -34,7 +34,7 @@
 
 		<!--工具条-->
 		<el-col :span="24" class="toolbar">
-			<el-pagination layout="prev, pager, next" :page-size="page" :total="total" style="text-align:center">
+			<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" layout="total, sizes, prev, pager, next, jumper" :page-sizes="pageSizes" :page-size="pageSize" :total="total" style="text-align:center">
 			</el-pagination>
 		</el-col>
 		
@@ -65,7 +65,9 @@ import send from '@/api'
     data () {
       return {
         total: 0,
-        page: 2,
+        pageSize: 10,
+				pageNum: 1,
+				pageSizes: [10,20,30],
         listLoading: false,
         sels: [],
         users: [],
@@ -163,18 +165,31 @@ import send from '@/api'
 					} // end if valid
 				})
 			},
+			handleCurrentChange (pageNum) {
+				this.pageNum = pageNum
+				this.getUsers()
+			},
+			handleSizeChange (pageSize) {
+				this.pageSize = pageSize
+				this.getUsers()
+			},
 			getUsers () {
 				this.listLoading = true
 				send({
 					path: '/user/list',
-					data: {}
+					data: {
+						pageSize: this.pageSize,
+						pageNum: this.pageNum
+					}
 				})
 				.then((res) => {
 					console.log(res)
 					if (res.success) {
 						console.log('获取成功')
-							this.total = res.obj.total
-							this.users = res.obj.users
+							const pageInfo = res.obj.page
+							this.total = pageInfo.total
+							this.users = pageInfo.list
+							this.pageNum = pageInfo.pageNum
 							this.listLoading = false
 					} else {
 						this.listLoading = false

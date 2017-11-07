@@ -3,9 +3,9 @@ package com.hs.admin.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hs.admin.constants.Page;
-import com.hs.admin.model.CarouselModel;
+import com.hs.admin.model.SchoolLifeModel;
 import com.hs.admin.model.page.Result;
-import com.hs.admin.service.CarouselService;
+import com.hs.admin.service.SchoolLifeService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,12 +23,12 @@ import java.util.Map;
  * date :2017/10/29
  */
 @RestController
-@RequestMapping("/carousel")
-public class CarouselController {
-    private final static Logger logger = LoggerFactory.getLogger(CarouselController.class);
+@RequestMapping("/schoolLife")
+public class SchoolLifeController {
+    private final static Logger logger = LoggerFactory.getLogger(SchoolLifeController.class);
 
     @Autowired
-    private CarouselService carouselService;
+    private SchoolLifeService schoolLifeService;
 
     @RequestMapping("/list")
     public Result list(@RequestBody Map<String, Integer> reqMap) {
@@ -38,9 +38,9 @@ public class CarouselController {
         Result result = new Result();
 
         PageHelper.startPage(pageNum, pageSize);
-        List<CarouselModel> list = carouselService.carouselList();
+        List<SchoolLifeModel> list = schoolLifeService.list();
 
-        PageInfo<CarouselModel> pageInfo = new PageInfo<CarouselModel>(list);
+        PageInfo<SchoolLifeModel> pageInfo = new PageInfo<SchoolLifeModel>(list);
 
         Map<String, Object> dataMap = new HashMap<String, Object>();
         dataMap.put("page", pageInfo);
@@ -50,15 +50,14 @@ public class CarouselController {
     }
 
     @RequestMapping("/add")
-    public Result add(@RequestBody CarouselModel carouselModel) {
-        System.out.println(carouselModel);
+    public Result add(@RequestBody SchoolLifeModel schoolLifeModel) {
         Result result = new Result();
-        if (StringUtils.isBlank(StringUtils.trim(carouselModel.getC_img()))) {
+        if (StringUtils.isBlank(StringUtils.trim(schoolLifeModel.getS_img()))) {
             result.setSuccess(false);
-            result.setMsg("轮播图片不能为空");
+            result.setMsg("图片不能为空");
             return result;
         }
-        carouselService.addCarousel(carouselModel);
+        schoolLifeService.add(schoolLifeModel);
         result.setSuccess(true);
         return result;
     }
@@ -66,27 +65,27 @@ public class CarouselController {
     @RequestMapping("/del")
     public Result del(@RequestBody Map<String, String> reqMap) {
         Result result = new Result();
-        String c_id = reqMap.get("c_id");
-        if (StringUtils.isBlank(StringUtils.trim(c_id))) {
+        String s_id = reqMap.get("s_id");
+        if (StringUtils.isBlank(StringUtils.trim(s_id))) {
             result.setSuccess(false);
             result.setMsg("ID获取失败");
             return result;
         }
-        carouselService.delCarousel(c_id);
+        schoolLifeService.del(s_id);
         result.setSuccess(true);
         return result;
     }
 
     @RequestMapping("/edit")
-    public Result edit(@RequestBody CarouselModel carouselModel) {
+    public Result edit(@RequestBody SchoolLifeModel schoolLifeModel) {
         Result result = new Result();
-        String c_id = carouselModel.getC_id();
-        if (StringUtils.isBlank(StringUtils.trim(c_id))) {
+        String s_id = schoolLifeModel.getS_id();
+        if (StringUtils.isBlank(StringUtils.trim(s_id))) {
             result.setSuccess(false);
             result.setMsg("ID获取失败");
             return result;
         }
-        carouselService.updateCarousel(carouselModel);
+        schoolLifeService.update(schoolLifeModel);
         result.setSuccess(true);
         return result;
     }
@@ -95,20 +94,20 @@ public class CarouselController {
     @RequestMapping("/getById")
     public Result getById(@RequestBody Map<String, String> reqMap) {
         Result result = new Result();
-        String c_id = reqMap.get("c_id");
-        if (StringUtils.isBlank(StringUtils.trim(c_id))) {
+        String s_id = reqMap.get("s_id");
+        if (StringUtils.isBlank(StringUtils.trim(s_id))) {
             result.setSuccess(false);
             result.setMsg("ID获取失败");
             return result;
         }
-        CarouselModel carouselModel = carouselService.getOne(c_id);
-        if (carouselModel == null) {
+        SchoolLifeModel schoolLifeModel = schoolLifeService.getOne(s_id);
+        if (schoolLifeModel == null) {
             result.setSuccess(false);
             result.setMsg("未查到数据");
             return result;
         }
         result.setSuccess(true);
-        result.setObj(carouselModel);
+        result.setObj(schoolLifeModel);
         return result;
     }
 
