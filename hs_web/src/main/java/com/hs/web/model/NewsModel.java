@@ -19,6 +19,15 @@ public class NewsModel {
     private String n_brief_intro; //文章简介
     private String n_img;
     private int n_index;
+    private String n_desc;
+
+    public String getN_desc() {
+        return n_desc;
+    }
+
+    public void setN_desc(String n_desc) {
+        this.n_desc = n_desc;
+    }
 
     public int getN_index() {
         return n_index;
@@ -122,6 +131,7 @@ public class NewsModel {
                 ", n_brief_intro='" + n_brief_intro + '\'' +
                 ", n_img='" + n_img + '\'' +
                 ", n_index=" + n_index +
+                ", n_desc='" + n_desc + '\'' +
                 '}';
     }
 }

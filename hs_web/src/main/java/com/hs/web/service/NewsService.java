@@ -17,7 +17,7 @@ public class NewsService {
     @Autowired
     NewsMapper mapper;
 
-    public List<NewsModel> getHomeNews() {
-        return mapper.getHomeNews();
+    public List<NewsModel> getHomeNews(int type, int limit) {
+        return mapper.getHomeNews(type, limit);
     }
 }

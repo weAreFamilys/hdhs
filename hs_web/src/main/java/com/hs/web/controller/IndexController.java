@@ -32,7 +32,9 @@ public class IndexController {
     public String index(HttpServletRequest request) {
         request.setAttribute("carouselList", carouselService.carouselList());
         request.setAttribute("schoolLifeList", schoolLifeService.list());
-        request.setAttribute("newsList",newsService.getHomeNews());
+        request.setAttribute("newsList",newsService.getHomeNews(0, 10));
+        request.setAttribute("noticeList",newsService.getHomeNews(1, 10));
+        request.setAttribute("activityList",newsService.getHomeNews(2, 3));
         return "/index";
     }
 }

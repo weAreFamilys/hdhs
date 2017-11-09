@@ -25,7 +25,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" style="font-size: 22px; margin: 5px 20px;color: #ffffff">桦树林子学校</a>
+                    <div style="float: left;width:200px;">
+                        <a href="#">
+                            <img style="float: left;margin-top: 4px;" width="50" src="/img/logo.png" />
+                            <div style="float: left;margin: 15px 0 0 5px;">
+                                <h4 style="color: #fffd38;margin: 0px;">桦树林子学校</h4>
+                                <p style="font-size: 12px;color: #fffd38; padding: 0px;margin: 0px;">Hua Shu Lin Zi School</p>
+                            </div>
+
+                        </a>
+                    </div>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -184,20 +193,20 @@
                 </h3>
             </div>
             <ul class="news-ul">
-            <#if (newsList?size > 0)>
-                <#list newsList as news>
+            <#if (noticeList?size > 0)>
+                <#list noticeList as notice>
                     <li class="news-li news-title">
                         <span class="news-title-left">
                             <a href="#">
-                                <#if (news.n_title?length lt 19)>
-                                ${news.n_title}
+                                <#if (notice.n_title?length lt 19)>
+                                ${notice.n_title}
                                 <#else>
-                                ${news.n_title[0..18]}...
+                                ${notice.n_title[0..18]}...
                                 </#if>
                             </a>
                         </span>
                         <span class="news-date">
-                            <@timeline_dt datetime=news.n_create_time></@timeline_dt>
+                            <@timeline_dt datetime=notice.n_create_time></@timeline_dt>
                         </span>
                     </li>
                 </#list>
@@ -215,46 +224,28 @@
                     <small>Campus Activities</small>
                 </h3>
             </div>
-            <div style="height: 300px;">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img width="100" height="60" class="media-object" src="/img/1.jpg" alt="">
-                        </a>
+            <div class="news-ul">
+                <#list activityList as activity>
+                    <div class="media" style="height: 95px;">
+                        <div class="media-left">
+                            <a href="#">
+                                <img width="120" height="85" class="media-object" src="${activity.n_img?default('')}" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="media-heading">
+                                <#if (activity.n_title?length lt 15)>
+                                    ${activity.n_title?default('')}
+                                <#else>
+                                    ${activity.n_title[0..14]}...
+                                </#if>
+                            </h5>
+                            <p>
+
+                            </p>
+                        </div>
                     </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">这里是标题</h4>
-                        <p>
-                            是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容
-                        </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img width="100" height="60" class="media-object" src="/img/1.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">这里是标题</h4>
-                        <p>
-                            是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容
-                        </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img width="100" height="60" class="media-object" src="/img/1.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">这里是标题</h4>
-                        <p>
-                            是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容
-                        </p>
-                    </div>
-                </div>
+                </#list>
             </div>
             <hr/>
             <div class="news-more">
@@ -315,8 +306,42 @@
 </div>
 -->
 <!-- footer -->
-<div class="col-lg-12" style="height: 200px; background-color: #134499; border-top: 1px solid #d4d4d4">
-
+<div class="col-lg-12" style="height: 200px; background-color: #efefef; border-top: 1px solid #d4d4d4">
+    <div class="container">
+        <img style="margin: 50px 40px 0 0; float: left" width="100" src="/img/logo.png" />
+        <div style="float: left;margin:20px 0 20px 30px;">
+            <h4>学校概况</h4>
+            <ul style="margin: 0; list-style: none; padding:0;line-height: 25px;">
+                <li>学校简介</li>
+                <li>组织机构</li>
+                <li>办法特色</li>
+            </ul>
+        </div>
+        <div style="float: left;margin:20px 0 20px 30px;">
+            <h4>党建工作</h4>
+            <ul style="margin: 0; padding:0 0 0 15px;line-height: 25px;">
+                <li>学校简介</li>
+                <li>组织机构</li>
+                <li>办法特色</li>
+            </ul>
+        </div>
+        <div style="float: left;margin:20px 0 20px 30px;">
+            <h4>学校德育</h4>
+            <ul style="margin: 0; padding:0 0 0 15px;line-height: 25px;">
+                <li>学校简介</li>
+                <li>组织机构</li>
+                <li>办法特色</li>
+            </ul>
+        </div>
+        <div style="float: left;margin:20px 0 20px 30px;">
+            <h4>教学管理</h4>
+            <ul style="margin: 0; padding:0 0 0 15px;line-height: 25px;">
+                <li>学校简介</li>
+                <li>组织机构</li>
+                <li>办法特色</li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 
