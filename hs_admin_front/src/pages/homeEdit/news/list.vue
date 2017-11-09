@@ -6,6 +6,26 @@
 				<el-form-item>
 					<el-button type="primary" @click="toAddPage"><i class="fa fa-plus"></i> 新增</el-button>
 				</el-form-item>
+				<el-form-item>
+					<el-select v-model="c_type_selected" placeholder="选择类别">
+						<el-option
+							v-for="item in c_type"
+							:key="item.value"
+							:label="item.label"
+							:value="item.value">
+						</el-option>
+					</el-select>
+				</el-form-item>
+				<el-form-item>
+					<el-select v-model="c_is_publish_selected" placeholder="选择是否发布">
+						<el-option
+							v-for="item in c_is_publish"
+							:key="item.value"
+							:label="item.label"
+							:value="item.value">
+						</el-option>
+					</el-select>
+				</el-form-item>
 			</el-form>
 		</el-col>
 
@@ -15,17 +35,17 @@
 			</el-table-column>
 			<el-table-column prop="n_title" label="标题" min-width="300" style="over-flow:hidden">
 			</el-table-column>
-			<el-table-column prop="n_is_publish" label="是否发布" sortable>
-				<template slot-scope="scope">
-					<span v-if="scope.row.n_is_publish === 1">已发布</span>
-					<span v-else>未发布</span>
-				</template>
-			</el-table-column>
 			<el-table-column prop="n_type" label="类别" sortable>
 				<template slot-scope="scope">
 					<span v-if="scope.row.n_type === 0">新闻</span>
 					<span v-else-if="scope.row.n_type === 1">公告</span>
 					<span v-else>活动</span>
+				</template>
+			</el-table-column>
+			<el-table-column prop="n_is_publish" label="是否发布" sortable>
+				<template slot-scope="scope">
+					<span v-if="scope.row.n_is_publish === 1">已发布</span>
+					<span v-else>未发布</span>
 				</template>
 			</el-table-column>
 			<el-table-column prop="n_create_time" min-width="120" label="创建日期" sortable>
@@ -66,7 +86,32 @@ import send from '@/api'
 				pageSizes: [10,20,30],
         listLoading: false,
         sels: [],
-        lists: []
+        lists: [],
+				c_type_selected: '',
+				c_is_publish_selected: '',
+				c_type: [{
+          value: '',
+          label: '全部'
+        }, {
+          value: '0',
+          label: '新闻'
+        }, {
+          value: '1',
+          label: '公告'
+        }, {
+          value: '2',
+          label: '活动'
+        }],
+				c_is_publish: [{
+          value: '',
+          label: '全部'
+        }, {
+          value: '0',
+          label: '未发布'
+        }, {
+          value: '1',
+          label: '已发布'
+        }]
 			}
     },
     mounted () {

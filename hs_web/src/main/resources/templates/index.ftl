@@ -11,6 +11,7 @@
     <link href="/css/index.css" rel="stylesheet">
 </head>
 <body>
+<#include "common/common.ftl">
 <div class="navbar-wrapper">
     <div class="container">
 
@@ -146,42 +147,72 @@
     <div class="row news">
         <div class="col-sm-6 col-md-4">
             <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-cd"></span>学校新闻
-                    <small>Subtext for header</small>
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-cd"></span>校园新闻
+                    <small>Campus News</small>
                 </h3>
             </div>
 
             <ul class="news-ul">
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+            <#if (newsList?size > 0)>
+                <#list newsList as news>
+                    <li class="news-li news-title">
+                        <span class="news-title-left">
+                            <a href="#">
+                                <#if (news.n_title?length lt 19)>
+                                    ${news.n_title}
+                                <#else>
+                                    ${news.n_title[0..18]}...
+                                </#if>
+                            </a>
+                        </span>
+                        <span class="news-date">
+                            <@timeline_dt datetime=news.n_create_time></@timeline_dt>
+                        </span>
+                    </li>
+                </#list>
+            </#if>
             </ul>
             <hr/>
-            <a href="#">更多学校新闻 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
+            <div class="news-more">
+                <a href="#">继续浏览 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
+            </div>
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="page-header">
                 <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-volume-up"></span>通知公告
-                    <small>Subtext for header</small>
+                    <small>Public Notice</small>
                 </h3>
             </div>
             <ul class="news-ul">
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
-                <li class="news-li"><a href="#">这里是新闻内容这里容这里是新闻内容...</a></li>
+            <#if (newsList?size > 0)>
+                <#list newsList as news>
+                    <li class="news-li news-title">
+                        <span class="news-title-left">
+                            <a href="#">
+                                <#if (news.n_title?length lt 19)>
+                                ${news.n_title}
+                                <#else>
+                                ${news.n_title[0..18]}...
+                                </#if>
+                            </a>
+                        </span>
+                        <span class="news-date">
+                            <@timeline_dt datetime=news.n_create_time></@timeline_dt>
+                        </span>
+                    </li>
+                </#list>
+            </#if>
             </ul>
             <hr/>
-            <a href="#">通知公告 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
+            <div class="news-more">
+                <a href="#">继续浏览 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
+            </div>
         </div>
 
         <div class="col-sm-6 col-md-4">
             <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-education"></span>最新活动
-                    <small>Subtext for header</small>
+                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-education"></span>校园活动
+                    <small>Campus Activities</small>
                 </h3>
             </div>
             <div style="height: 300px;">
@@ -226,18 +257,21 @@
                 </div>
             </div>
             <hr/>
-            <a href="#">最新活动 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
+            <div class="news-more">
+                <a href="#">继续浏览 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
+            </div>
 
         </div>
     </div>
 </div><!-- /.container -->
 
-<!-- 校园生活 -->
+<!-- 校园生活
 <div style="width:100%;height: 100%;background-color: #122b40">
+-->
 <div class="container">
     <div class="page-header">
-        <h3 style="color: #fff;"><span style="color: #fff; letter-spacing: 10px;" class="glyphicon glyphicon-camera"></span>校园生活
-            <small style="color: #fff;">School Life</small>
+        <h3><span style="color: #428bca; letter-spacing: 10px;" class="glyphicon glyphicon-camera"></span>校园生活
+            <small>Campus Life</small>
         </h3>
     </div>
     <div class="row">
@@ -245,22 +279,44 @@
             <div class="col-md-4">
                 <div class="thumbnail">
                     <div class="image view view-first">
-                        <img style="width: 100%;height: 220px;" src="${schoolLife.s_img}" alt="">
-                    </div>
-                    <div class="caption">
-                        <h3>${schoolLife.s_title}</h3>
-                        <p style="height: 60px;overflow: hidden">${schoolLife.s_desc}</p>
+                        <img style="width: 100%;height: 220px;display: block;" src="${schoolLife.s_img}" alt="">
+                        <#--<h4 class="img-title">-->
+                            <#--<#if (schoolLife.s_title?length lt 12)>-->
+                            <#--${schoolLife.s_title}-->
+                            <#--<#else>-->
+                            <#--${schoolLife.s_title[0..11]}...-->
+                            <#--</#if>-->
+                        <#--</h4>-->
+                        <div class="mask">
+                            <p>
+                                <h4 style="color: #fff;">
+                                    <#if (schoolLife.s_title?length lt 12)>
+                                        ${schoolLife.s_title}
+                                    <#else>
+                                        ${schoolLife.s_title[0..11]}...
+                                    </#if>
+                                </h4>
+                                <p style="color: #fff;">
+                                    <#if (schoolLife.s_desc?length lt 100)>
+                                        ${schoolLife.s_desc}
+                                    <#else>
+                                        ${schoolLife.s_desc[0..99]}...
+                                    </#if>
+                                </p>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </#list>
     </div>
 </div>
-<!-- /校园生活 -->
+<!-- /校园生活
 </div>
+-->
 <!-- footer -->
-<div class="col-lg-12" style="height: 100px; background-color: #e8e8e8; border-top: 1px solid #d4d4d4">
-    <p class="pull-right"><a href="#">Back to top</a></p>
+<div class="col-lg-12" style="height: 200px; background-color: #134499; border-top: 1px solid #d4d4d4">
+
 </div>
 
 

@@ -29,7 +29,7 @@ let newsEditRouter = [
       // 首页维护 - 新闻维护
       {path: '/home/news/list', component: NewsList, name: '新闻、公告、活动维护'},
       {path: '/home/news/edit', component: NewsEdit, name: '新闻、公告、活动修改', hidden: true},
-      {path: '/home/news/add', component: NewsAdd, name: '新闻、公告、活动增加', hidden: true},
+      {path: '/home/news/add', component: NewsAdd, name: '新闻、公告、活动增加', hidden: true}
     ]
   }
 ]
