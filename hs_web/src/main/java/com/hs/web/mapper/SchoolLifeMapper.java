@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface SchoolLifeMapper {
 
-    @Select("select * from SchoolLife where s_is_publish = 1 order by s_index asc limit 3")
+    @Select("select * from SchoolLife where s_is_publish = 1 order by s_index asc limit 6")
     List<SchoolLifeModel> get();
 
 }

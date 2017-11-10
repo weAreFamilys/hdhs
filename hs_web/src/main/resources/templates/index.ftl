@@ -40,7 +40,7 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">学校概况<span class="caret"></span></a>
+                               aria-expanded="false">学校概况</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">学校简介</a></li>
                                 <li><a href="#">组织机构</a></li>
@@ -49,7 +49,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">党建工作<span class="caret"></span></a>
+                               aria-expanded="false">党建工作</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">工作通知</a></li>
                                 <li><a href="#">党员风采</a></li>
@@ -60,7 +60,7 @@
 
                         <li class="dropdown">
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">学校德育<span class="caret"></span></a>
+                               aria-expanded="false">学校德育</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">工作通知</a></li>
                                 <li><a href="#">德育实践</a></li>
@@ -70,7 +70,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">教学管理<span class="caret"></span></a>
+                               aria-expanded="false">教学管理</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">教育教学理念</a></li>
                                 <li><a href="#">教学管理体系</a></li>
@@ -80,7 +80,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">教育科研<span class="caret"></span></a>
+                               aria-expanded="false">教育科研</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">课题研究</a></li>
                                 <li><a href="#">科研简讯</a></li>
@@ -90,7 +90,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="navbar-title" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">教学资源<span class="caret"></span></a>
+                               aria-expanded="false">教学资源</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">电子教案</a></li>
                                 <li><a href="#">课件</a></li>
@@ -113,236 +113,18 @@
 </div>
 
 <!-- Carousel -->
-<#if (carouselList?size > 0)>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <#list carouselList as carousel>
-            <li data-slide-to="${carousel_index}" <#if (carousel_index == 0)>class="active"</#if>></li>
-        </#list>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <#list carouselList as carousel>
-            <div class="item <#if (carousel_index == 0)>active</#if>">
-                <img src="${carousel.c_img}"/>
-
-                <div class="container">
-                    <div class="carousel-caption">
-
-                        <h1>${carousel.c_title?default('')}</h1>
-                        <p>${carousel.c_desc?default('')}</p>
-                        <#if (carousel.c_content != '')>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">详细信息</a></p>
-                        </#if>
-                    </div>
-                </div>
-            </div>
-        </#list>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">前翻</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">后翻</span>
-    </a>
-</div>
-<#else>
-<div style="height: 300px; background-color: #eeeeee"></div>
-</#if>
+<#include "carousel.ftl">
 <!-- /carousel -->
 
-<div class="container">
-    <div class="row news">
-        <div class="col-sm-6 col-md-4">
-            <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-cd"></span>校园新闻
-                    <small>Campus News</small>
-                </h3>
-            </div>
+<!-- 新闻 -->
+<#include "news.ftl">
+<!-- /新闻 -->
 
-            <ul class="news-ul">
-            <#if (newsList?size > 0)>
-                <#list newsList as news>
-                    <li class="news-li news-title">
-                        <span class="news-title-left">
-                            <a href="#">
-                                <#if (news.n_title?length lt 19)>
-                                    ${news.n_title}
-                                <#else>
-                                    ${news.n_title[0..18]}...
-                                </#if>
-                            </a>
-                        </span>
-                        <span class="news-date">
-                            <@timeline_dt datetime=news.n_create_time></@timeline_dt>
-                        </span>
-                    </li>
-                </#list>
-            </#if>
-            </ul>
-            <hr/>
-            <div class="news-more">
-                <a href="#">继续浏览 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-volume-up"></span>通知公告
-                    <small>Public Notice</small>
-                </h3>
-            </div>
-            <ul class="news-ul">
-            <#if (noticeList?size > 0)>
-                <#list noticeList as notice>
-                    <li class="news-li news-title">
-                        <span class="news-title-left">
-                            <a href="#">
-                                <#if (notice.n_title?length lt 19)>
-                                ${notice.n_title}
-                                <#else>
-                                ${notice.n_title[0..18]}...
-                                </#if>
-                            </a>
-                        </span>
-                        <span class="news-date">
-                            <@timeline_dt datetime=notice.n_create_time></@timeline_dt>
-                        </span>
-                    </li>
-                </#list>
-            </#if>
-            </ul>
-            <hr/>
-            <div class="news-more">
-                <a href="#">继续浏览 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
-            </div>
-        </div>
+<!-- 校园生活 -->
+<#include "campus-life.ftl">
+<!-- /校园生活-->
 
-        <div class="col-sm-6 col-md-4">
-            <div class="page-header">
-                <h3><span style="color: #428bca;letter-spacing: 10px;" class="glyphicon glyphicon-education"></span>校园活动
-                    <small>Campus Activities</small>
-                </h3>
-            </div>
-            <div class="news-ul">
-                <#list activityList as activity>
-                    <div class="media" style="height: 95px;">
-                        <div class="media-left">
-                            <a href="#">
-                                <img width="120" height="85" class="media-object" src="${activity.n_img?default('')}" alt="">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h5 class="media-heading">
-                                <#if (activity.n_title?length lt 15)>
-                                    ${activity.n_title?default('')}
-                                <#else>
-                                    ${activity.n_title[0..14]}...
-                                </#if>
-                            </h5>
-                            <p>
-
-                            </p>
-                        </div>
-                    </div>
-                </#list>
-            </div>
-            <hr/>
-            <div class="news-more">
-                <a href="#">继续浏览 <span class="glyphicon glyphicon-menu-right more-icon"></span></a>
-            </div>
-
-        </div>
-    </div>
-</div><!-- /.container -->
-
-<!-- 校园生活
-<div style="width:100%;height: 100%;background-color: #122b40">
--->
-<div class="container">
-    <div class="page-header">
-        <h3><span style="color: #428bca; letter-spacing: 10px;" class="glyphicon glyphicon-camera"></span>校园生活
-            <small>Campus Life</small>
-        </h3>
-    </div>
-    <div class="row">
-        <#list schoolLifeList as schoolLife>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <div class="image view view-first">
-                        <img style="width: 100%;height: 220px;display: block;" src="${schoolLife.s_img}" alt="">
-                        <#--<h4 class="img-title">-->
-                            <#--<#if (schoolLife.s_title?length lt 12)>-->
-                            <#--${schoolLife.s_title}-->
-                            <#--<#else>-->
-                            <#--${schoolLife.s_title[0..11]}...-->
-                            <#--</#if>-->
-                        <#--</h4>-->
-                        <div class="mask">
-                            <p>
-                                <h4 style="color: #fff;">
-                                    <#if (schoolLife.s_title?length lt 12)>
-                                        ${schoolLife.s_title}
-                                    <#else>
-                                        ${schoolLife.s_title[0..11]}...
-                                    </#if>
-                                </h4>
-                                <p style="color: #fff;">
-                                    <#if (schoolLife.s_desc?length lt 100)>
-                                        ${schoolLife.s_desc}
-                                    <#else>
-                                        ${schoolLife.s_desc[0..99]}...
-                                    </#if>
-                                </p>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </#list>
-    </div>
-</div>
-<!-- /校园生活
-</div>
--->
-<!-- footer -->
-<div class="col-lg-12" style="height: 200px; background-color: #efefef; border-top: 1px solid #d4d4d4">
-    <div class="container">
-        <img style="margin: 50px 40px 0 0; float: left" width="100" src="/img/logo.png" />
-        <div style="float: left;margin:20px 0 20px 30px;">
-            <h4>学校概况</h4>
-            <ul style="margin: 0; list-style: none; padding:0;line-height: 25px;">
-                <li>学校简介</li>
-                <li>组织机构</li>
-                <li>办法特色</li>
-            </ul>
-        </div>
-        <div style="float: left;margin:20px 0 20px 30px;">
-            <h4>党建工作</h4>
-            <ul style="margin: 0; padding:0 0 0 15px;line-height: 25px;">
-                <li>学校简介</li>
-                <li>组织机构</li>
-                <li>办法特色</li>
-            </ul>
-        </div>
-        <div style="float: left;margin:20px 0 20px 30px;">
-            <h4>学校德育</h4>
-            <ul style="margin: 0; padding:0 0 0 15px;line-height: 25px;">
-                <li>学校简介</li>
-                <li>组织机构</li>
-                <li>办法特色</li>
-            </ul>
-        </div>
-        <div style="float: left;margin:20px 0 20px 30px;">
-            <h4>教学管理</h4>
-            <ul style="margin: 0; padding:0 0 0 15px;line-height: 25px;">
-                <li>学校简介</li>
-                <li>组织机构</li>
-                <li>办法特色</li>
-            </ul>
-        </div>
-    </div>
-</div>
+<#include "footer.ftl">
 
 
 <script src="/js/jquery.min.js"></script>

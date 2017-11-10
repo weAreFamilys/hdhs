@@ -20,4 +20,8 @@ public class NewsService {
     public List<NewsModel> getHomeNews(int type, int limit) {
         return mapper.getHomeNews(type, limit);
     }
+
+    public NewsModel getNewsById(String id){
+        return mapper.getNewsById(id);
+    };
 }

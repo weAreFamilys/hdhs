@@ -15,4 +15,7 @@ public interface NewsMapper {
     @SelectProvider(type = NewsProvider.class,method = "select")
     List<NewsModel> getHomeNews(int type, int limit);
 
+    @Select("select * from News where n_id=#{id}")
+    NewsModel getNewsById(String id);
+
 }

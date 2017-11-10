@@ -45,6 +45,7 @@ body {
 
 .navbar-wrapper .navbar .dropdown {
     width: 125px;
+    text-align: center;
 }
 
 .navbar-wrapper .navbar .dropdown > a {
