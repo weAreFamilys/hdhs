@@ -33,6 +33,7 @@
 .navbar .dropdown {
     width: 100px;
     text-align: center;
+    font-size: 14px;
 }
 .navbar .dropdown-menu {
     width: 100px;

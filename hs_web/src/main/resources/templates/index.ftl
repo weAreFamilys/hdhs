@@ -126,10 +126,6 @@
 
 <#include "footer.ftl">
 
-
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/ie10-viewport-bug-workaround.js"></script>
-<script src="/js/index.js"></script>
+<#include "common/script.ftl">
 </body>
 </html>

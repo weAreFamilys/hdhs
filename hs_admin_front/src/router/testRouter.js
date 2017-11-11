@@ -15,20 +15,9 @@ let userEditRouter = [
   },
   {
     path: '/',
-    name: '教学资源维护',
-    component: Home,
-    icon: 'fa fa fa-bars',
-    children: [
-      {path: '/home/carousel/list2', component: CarouselList, name: '电子教案维护'},
-      {path: '/home/carousel/edit2', component: CarouselList, name: '课件维护'},
-      {path: '/home/carousel/add2', component: CarouselList, name: '教学视频维护'}
-    ]
-  },
-  {
-    path: '/',
     name: '党建工作维护',
     component: Home,
-    icon: 'fa fa fa-bars',
+    icon: 'fa fa-bars',
     children: [
       {path: '/home/carousel/list3', component: CarouselList, name: '工作通知维护'},
       {path: '/home/carousel/edit3', component: CarouselList, name: '党员风采维护'},
@@ -39,7 +28,7 @@ let userEditRouter = [
     path: '/',
     name: '教育科研维护',
     component: Home,
-    icon: 'fa fa fa-bars',
+    icon: 'fa fa-bars',
     children: [
       {path: '/home/carousel/list4', component: CarouselList, name: '课题研究维护'},
       {path: '/home/carousel/edit4', component: CarouselList, name: '科研简讯维护'},

@@ -16,7 +16,7 @@ let newsEditRouter = [
     path: '/',
     name: '首页信息维护',
     component: Home,
-    icon: 'fa fa fa-bars',
+    icon: 'fa fa-star',
     children: [
       // 首页维护 - 轮播维护
       {path: '/home/carousel/list', component: CarouselList, name: '首页轮播维护'},
