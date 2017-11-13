@@ -4,7 +4,10 @@ import Login from '@/pages/login'
 import userEditRouter from './userEditRouter'
 import homeEditRouter from './homeEditRouter'
 import resourceEditRouter from './resourceEditRouter'
-import testRouter from './testRouter'
+// import testRouter from './testRouter'
+import schoolProfileRouter from './schoolProfileRouter'
+import partybuildRouter from './partybuildRouter'
+import educationRouter from './educationRouter'
 
 Vue.use(Router)
 
@@ -21,7 +24,10 @@ let routes = []
 .concat(userEditRouter)
 .concat(homeEditRouter)
 .concat(resourceEditRouter)
-.concat(testRouter)
+.concat(schoolProfileRouter)
+.concat(partybuildRouter)
+.concat(educationRouter)
+// .concat(testRouter)
 
 export default new Router({
   routes

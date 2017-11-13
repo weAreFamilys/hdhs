@@ -10,7 +10,7 @@ let userEditRouter = [
       // 首页维护 - 轮播维护
       {path: '/home/carousel/list1', component: CarouselList, name: '学校简介'},
       {path: '/home/carousel/edit1', component: CarouselList, name: '组织机构维护'},
-      {path: '/home/carousel/add1', component: CarouselList, name: '办学特色维护'},
+      {path: '/home/carousel/add1', component: CarouselList, name: '办学特色维护'}
     ]
   },
   {
