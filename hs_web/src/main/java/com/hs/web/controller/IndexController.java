@@ -1,6 +1,6 @@
 package com.hs.web.controller;
 
-import com.hs.web.model.CarouselModel;
+import com.hs.web.Util.Constants;
 import com.hs.web.service.CarouselService;
 import com.hs.web.service.NewsService;
 import com.hs.web.service.SchoolLifeService;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * @user :flyxk
@@ -28,13 +27,13 @@ public class IndexController {
     @Autowired
     NewsService newsService;
 
-    @RequestMapping("/")
+    @RequestMapping(value = {"/", "/index"})
     public String index(HttpServletRequest request) {
         request.setAttribute("carouselList", carouselService.carouselList());
         request.setAttribute("schoolLifeList", schoolLifeService.list());
-        request.setAttribute("newsList",newsService.getHomeNews(0, 10));
-        request.setAttribute("noticeList",newsService.getHomeNews(1, 10));
-        request.setAttribute("activityList",newsService.getHomeNews(2, 3));
+        request.setAttribute("newsList", newsService.getHomeNews(0, 10));
+        request.setAttribute("noticeList", newsService.getHomeNews(1, 10));
+        request.setAttribute("activityList", newsService.getHomeNews(2, 3));
         return "/index";
     }
 }

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #fff;">
-    <hr style="width: 100%; height: 3px; background-color: #3e94d8; padding: 0; margin: 0" />
+    <hr style="width: 100%; height: 3px; background-color: #3e94d8; padding: 0; margin: 0"/>
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -12,14 +12,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="/" style="margin: 0; padding: 5px 10px">
-                        <img width="40" src="/img/logo.png" />
-                    </a>
-                </li>
+                <#--<li>-->
+                    <#--<a href="/" style="margin: 0; padding: 5px 10px">-->
+                        <#--<img width="40" src="/img/logo.png"/>-->
+                    <#--</a>-->
+                <#--</li>-->
                 <li>
                     <a href="/">
-                        首页
+                        <span class="glyphicon glyphicon-home"></span> 返回首页
                     </a>
                 </li>
                 <li class="dropdown">
@@ -78,14 +78,42 @@
                         <li><a href="#">电子教案</a></li>
                         <li><a href="#">课件</a></li>
                         <li><a href="#">教学视频</a></li>
-
+                        <#if Session.LOGIN_USER?exists>
+                            <li><a href="/upload/index">上传教学资源</a></li>
+                        </#if>
                     </ul>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+            <#if Session.LOGIN_USER?exists>
+                <div style="float: right; margin: 15px 15px 0 0;">
+                    <span style="margin-right: 10px;">
+                        <span class="glyphicon glyphicon-user"></span> ${Session.LOGIN_USER.name?default('')}
+                    </span>
+                    <span>
+                        <a href="/user/logout">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                        </a>
+                    </span>
+                </div>
+            <#else>
+                <div style="margin: 15px 15px 0  0">
+                    <span>还未登录!</span>
+                    <span>|</span>
+                    <span>
+                    <a href="#" data-toggle="modal" data-target="#registModel">
+                        注册
+                    </a>
+                    </span>
+                    <span>|</span>
+                    <span>
+                    <a href="#" data-toggle="modal" data-target="#loginModel">
+                        登录
+                    </a>
+                    </span>
+                </div>
+            </#if>
             </ul>
 
         </div>
